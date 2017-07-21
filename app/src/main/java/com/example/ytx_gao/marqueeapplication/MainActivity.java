@@ -31,19 +31,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
-        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                marqueeView.startTwinkle();
-            }
-        });
-        findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                marqueeView.stopTwinkle();
-            }
-        });
+//        marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
+//        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                marqueeView.startTwinkle();
+//            }
+//        });
+//        findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                marqueeView.stopTwinkle();
+//            }
+//        });
     }
 
     @Override

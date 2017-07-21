@@ -16,7 +16,9 @@
     </declare-styleable>
 
     <declare-styleable name="Marquee">
-
+        <attr name="background_color" format="color" />
+        <attr name="bright_color" format="color" />
+        <attr name="gray_color" format="color" />
     </declare-styleable>
 
 </resources>

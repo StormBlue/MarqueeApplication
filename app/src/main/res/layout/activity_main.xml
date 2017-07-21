@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <com.example.ytx_gao.marqueeview.MarqueeView
+    <com.example.ytx_gao.marqueeview.MarqueeSurfaceView
         android:id="@+id/marquee_view"
         android:layout_width="match_parent"
         android:layout_height="60dp"

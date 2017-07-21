@@ -42,6 +42,7 @@ public class MarqueeView extends View {
     private int lightBrightColor = default_light_bright_color;
     private int lightGrayColor = default_light_gray_color;
 
+    private int[] lightTargetColors = new int[lightAmount];
     private int[] lightColors = new int[lightAmount];
     private RectF[] lightRectFs = new RectF[lightAmount];
     private Paint lightPaint;
@@ -53,8 +54,12 @@ public class MarqueeView extends View {
     private Handler uiHandler;
 
     private static final String INSTANCE_STATE = "saved_instance";
+    private static final String INSTANCE_BACKGROUND_COLOR = "saved_bg_color";
+    private static final String INSTANCE_BRIGHT_COLOR = "saved_bright_color";
+    private static final String INSTANCE_GRAY_COLOR = "saved_gray_color";
 
     private static final int TYPE_TWINKLE_BRIGHT = 0;
+    private static final int TYPE_TWINKLE_TARGET = 1;
 
     public MarqueeView(Context context) {
         this(context, null);
@@ -77,6 +82,9 @@ public class MarqueeView extends View {
     }
 
     private void init() {
+        for (int i = 0; i < lightAmount; i++) {
+            lightTargetColors[i] = Color.argb((int) (255 * (1 - (float) i / lightAmount)), 0, 245, 170);
+        }
         uiHandler = new UIHandler(this);
         initView();
     }
@@ -128,20 +136,23 @@ public class MarqueeView extends View {
     public void startTwinkle() {
         if (!isTwinkle) {
             isTwinkle = true;
-            uiHandler.sendEmptyMessage(TYPE_TWINKLE_BRIGHT);
+            uiHandler.sendEmptyMessage(TYPE_TWINKLE_TARGET);
         }
     }
 
     public void stopTwinkle() {
         isTwinkle = false;
+        currentIndex = 0;
+        for (int i = 0; i < lightAmount; i++) {
+            lightColors[i] = lightGrayColor;
+        }
+        invalidate();
     }
 
     private void twinkle() {
         if (isTwinkle) {
-            if ((lightAmount - 1) != currentIndex) {
-                uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_BRIGHT, getAnimDelay());
-            }else {
-
+            if ((lightAmount - 1) > currentIndex) {
+                uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_TARGET, getAnimDelay());
             }
         }
     }
@@ -159,8 +170,13 @@ public class MarqueeView extends View {
             if (null == outer) return;
             switch (msg.what) {
                 case TYPE_TWINKLE_BRIGHT:
-                    outer.changeBrightColors();
-                    outer.postInvalidate();
+                    outer.toBrightColors();
+                    outer.invalidate();
+                    outer.twinkle();
+                    break;
+                case TYPE_TWINKLE_TARGET:
+                    outer.toTargetColors();
+                    outer.invalidate();
                     outer.twinkle();
                     break;
                 default:
@@ -169,13 +185,7 @@ public class MarqueeView extends View {
         }
     }
 
-    private void changeBrightColors() {
-        if (currentIndex == (lightAmount - 1)) {
-            currentIndex = 0;
-            for (int j = 0; j < lightAmount; j++) {
-                lightColors[j] = lightGrayColor;
-            }
-        }
+    private void toBrightColors() {
         for (int i = 0; i < lightAmount; i++) {
             if (lightBrightColor != lightColors[i]) {
                 lightColors[i] = lightBrightColor;
@@ -185,37 +195,72 @@ public class MarqueeView extends View {
         }
     }
 
-    private int getAnimDelay() {
-//        int delay = (int) (200 * interpolator.getInterpolation((float) currentIndex / lightAmount));
-//        Log.d(TAG, "时间间隔为------" + delay);
-        return 50;
-    }
-
-    private static class TwinkleThread extends Thread {
-
-        private boolean running = false;
-
-        private MarqueeView view;
-
-        public TwinkleThread(MarqueeView v) {
-            super();
-            view = v;
-        }
-
-        @Override
-        public void run() {
-            for (; ; ) {
-                if (running) {
-                    view.changeBrightColors();
-                    view.postInvalidate();
-                    try {
-                        TimeUnit.MILLISECONDS.sleep(view.getAnimDelay());
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+    private void toTargetColors() {
+        for (int i = 0; i < lightAmount; i++) {
+            if (lightTargetColors[i] != lightColors[i]) {
+                lightColors[i] = lightTargetColors[i];
+                currentIndex = i;
+                break;
             }
         }
+    }
+
+    private int getAnimDelay() {
+        int delay = (int) (30 * interpolator.getInterpolation((float) currentIndex / lightAmount));
+        Log.d(TAG, "时间间隔为------" + delay);
+        return delay;
+    }
+
+//    private static class TwinkleThread extends Thread {
+//
+//        private boolean running = false;
+//
+//        private MarqueeView view;
+//
+//        public TwinkleThread(MarqueeView v) {
+//            super();
+//            view = v;
+//        }
+//
+//        @Override
+//        public void run() {
+//            for (; ; ) {
+//                if (running) {
+//                    view.changeBrightColors();
+//                    view.postInvalidate();
+//                    try {
+//                        TimeUnit.MILLISECONDS.sleep(view.getAnimDelay());
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    @Override
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
+    public int getLightBrightColor() {
+        return lightBrightColor;
+    }
+
+    public void setLightBrightColor(int lightBrightColor) {
+        this.lightBrightColor = lightBrightColor;
+    }
+
+    public int getLightGrayColor() {
+        return lightGrayColor;
+    }
+
+    public void setLightGrayColor(int lightGrayColor) {
+        this.lightGrayColor = lightGrayColor;
     }
 
     @Override
