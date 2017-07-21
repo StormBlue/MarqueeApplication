@@ -1,5 +1,6 @@
 package com.example.ytx_gao.marqueeapplication;
 
+import android.animation.Animator;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
 
 import com.example.ytx_gao.marqueeview.MarqueeView;
 
@@ -30,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                marqueeView.twinkle();
+                marqueeView.startTwinkle();
+            }
+        });
+        findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                marqueeView.stopTwinkle();
             }
         });
     }
@@ -50,4 +57,5 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
 }

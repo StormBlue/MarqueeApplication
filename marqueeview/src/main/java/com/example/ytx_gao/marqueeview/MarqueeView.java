@@ -11,12 +11,17 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 
 import java.lang.ref.WeakReference;
+import java.util.concurrent.TimeUnit;
 
 public class MarqueeView extends View {
-    private final String TAG = this.getClass().getSimpleName();
+    private final static String TAG = "MarqueeView";
 
     private int width, height;// view的宽与高
 
@@ -42,12 +47,14 @@ public class MarqueeView extends View {
     private Paint lightPaint;
 
     private boolean isFirstDraw = true;
+
+    private int currentIndex = 0;
+    private Interpolator interpolator;
     private Handler uiHandler;
 
     private static final String INSTANCE_STATE = "saved_instance";
 
     private static final int TYPE_TWINKLE_BRIGHT = 0;
-    private static final int TYPE_TWINKLE_GRAY = 1;
 
     public MarqueeView(Context context) {
         this(context, null);
@@ -59,10 +66,9 @@ public class MarqueeView extends View {
 
     public MarqueeView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        uiHandler = new UIHandler(this);
         TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.Marquee);
         initByAttributes(mTypedArray);
-        initView();
+        init();
         mTypedArray.recycle();
     }
 
@@ -70,7 +76,13 @@ public class MarqueeView extends View {
 
     }
 
+    private void init() {
+        uiHandler = new UIHandler(this);
+        initView();
+    }
+
     public void initView() {
+        interpolator = new DecelerateInterpolator();
         lightPaint = new Paint();
         lightPaint.setStyle(Paint.Style.FILL);
         lightPaint.setAntiAlias(true);
@@ -111,42 +123,45 @@ public class MarqueeView extends View {
         }
     }
 
-    public void twinkle() {
-//        DecelerateInterpolator
-        if (uiHandler.hasMessages(TYPE_TWINKLE_BRIGHT)) {
-            return;
+    private boolean isTwinkle = false;
+
+    public void startTwinkle() {
+        if (!isTwinkle) {
+            isTwinkle = true;
+            uiHandler.sendEmptyMessage(TYPE_TWINKLE_BRIGHT);
         }
-        uiHandler.sendEmptyMessage(TYPE_TWINKLE_BRIGHT);
     }
 
-    private class UIHandler extends Handler {
-        private WeakReference<MarqueeView> outer;
+    public void stopTwinkle() {
+        isTwinkle = false;
+    }
+
+    private void twinkle() {
+        if (isTwinkle) {
+            if ((lightAmount - 1) != currentIndex) {
+                uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_BRIGHT, getAnimDelay());
+            }else {
+
+            }
+        }
+    }
+
+    private static class UIHandler extends Handler {
+        private WeakReference<MarqueeView> reference;
 
         public UIHandler(MarqueeView view) {
-            outer = new WeakReference<MarqueeView>(view);
+            reference = new WeakReference<>(view);
         }
 
         @Override
         public void handleMessage(Message msg) {
-            if (null == outer.get()) return;
+            MarqueeView outer = reference.get();
+            if (null == outer) return;
             switch (msg.what) {
                 case TYPE_TWINKLE_BRIGHT:
-                    changeBrightColors();
-                    if (lightBrightColor != lightColors[lightAmount - 1]) {
-                        uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_BRIGHT, 50);
-                    } else {
-                        uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_GRAY, 50);
-                    }
-                    postInvalidate();
-                    break;
-                case TYPE_TWINKLE_GRAY:
-                    changeGrayColors();
-                    postInvalidate();
-                    if (lightGrayColor != lightColors[lightAmount - 1]) {
-                        uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_GRAY, 50);
-                    } else {
-                        uiHandler.sendEmptyMessageDelayed(TYPE_TWINKLE_BRIGHT, 50);
-                    }
+                    outer.changeBrightColors();
+                    outer.postInvalidate();
+                    outer.twinkle();
                     break;
                 default:
                     break;
@@ -155,19 +170,50 @@ public class MarqueeView extends View {
     }
 
     private void changeBrightColors() {
+        if (currentIndex == (lightAmount - 1)) {
+            currentIndex = 0;
+            for (int j = 0; j < lightAmount; j++) {
+                lightColors[j] = lightGrayColor;
+            }
+        }
         for (int i = 0; i < lightAmount; i++) {
             if (lightBrightColor != lightColors[i]) {
                 lightColors[i] = lightBrightColor;
-                return;
+                currentIndex = i;
+                break;
             }
         }
     }
 
-    private void changeGrayColors() {
-        for (int i = 0; i < lightAmount; i++) {
-            if (lightGrayColor != lightColors[i]) {
-                lightColors[i] = lightGrayColor;
-                return;
+    private int getAnimDelay() {
+//        int delay = (int) (200 * interpolator.getInterpolation((float) currentIndex / lightAmount));
+//        Log.d(TAG, "时间间隔为------" + delay);
+        return 50;
+    }
+
+    private static class TwinkleThread extends Thread {
+
+        private boolean running = false;
+
+        private MarqueeView view;
+
+        public TwinkleThread(MarqueeView v) {
+            super();
+            view = v;
+        }
+
+        @Override
+        public void run() {
+            for (; ; ) {
+                if (running) {
+                    view.changeBrightColors();
+                    view.postInvalidate();
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(view.getAnimDelay());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
     }
