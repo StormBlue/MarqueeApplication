@@ -21,11 +21,19 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <com.example.ytx_gao.marqueeview.MarqueeSurfaceView
-        android:id="@+id/marquee_view"
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_centerInParent="true" />
+        android:layout_height="wrap_content"
+        android:background="#123a28"
+        android:layout_centerInParent="true"
+        app:duration="2000">
+
+        <com.example.ytx_gao.marqueeview.MarqueeView
+            android:id="@+id/marquee_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/stop"
@@ -35,6 +43,16 @@
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_media_pause" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/shimmerly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_media_ff" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/start"

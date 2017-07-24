@@ -12,10 +12,12 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 
 import com.example.ytx_gao.marqueeview.MarqueeView;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private MarqueeView marqueeView;
+    private ShimmerFrameLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +33,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-//        marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
-//        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                marqueeView.startTwinkle();
-//            }
-//        });
-//        findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                marqueeView.stopTwinkle();
-//            }
-//        });
+        marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
+        container =
+                (ShimmerFrameLayout) findViewById(R.id.shimmer_view_container);
+        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                marqueeView.startTwinkle();
+            }
+        });
+        findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                marqueeView.stopTwinkle();
+            }
+        });
+        findViewById(R.id.shimmerly).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                container.startShimmerAnimation();
+            }
+        });
     }
 
     @Override

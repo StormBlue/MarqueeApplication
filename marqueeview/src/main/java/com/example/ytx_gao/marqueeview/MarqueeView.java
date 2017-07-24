@@ -2,9 +2,11 @@ package com.example.ytx_gao.marqueeview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,7 +47,10 @@ public class MarqueeView extends View {
     private int[] lightTargetColors = new int[lightAmount];
     private int[] lightColors = new int[lightAmount];
     private RectF[] lightRectFs = new RectF[lightAmount];
-    private Paint lightPaint;
+    private Paint lightPaint, imgPaint;
+
+    private Bitmap srcBitmap;
+    private Canvas srcCanvas;
 
     private boolean isFirstDraw = true;
 
@@ -83,7 +88,8 @@ public class MarqueeView extends View {
 
     private void init() {
         for (int i = 0; i < lightAmount; i++) {
-            lightTargetColors[i] = Color.argb((int) (255 * (1 - (float) i / lightAmount)), 0, 245, 170);
+//            lightTargetColors[i] = Color.argb((int) (255 * (1 - (float) i / lightAmount)), 0, 245, 170);
+            lightTargetColors[i] = Color.rgb((int) (255 * (1 - (float) i / lightAmount)), 245, 170);
         }
         uiHandler = new UIHandler(this);
         initView();
@@ -94,6 +100,9 @@ public class MarqueeView extends View {
         lightPaint = new Paint();
         lightPaint.setStyle(Paint.Style.FILL);
         lightPaint.setAntiAlias(true);
+
+        imgPaint = new Paint();
+        imgPaint.setAntiAlias(true);
     }
 
     @Override
@@ -106,6 +115,8 @@ public class MarqueeView extends View {
 
         lightDValueTop = (height - lightWidth) / 2;
         initLightRectFs();
+        srcBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        srcCanvas = new Canvas(srcBitmap);
     }
 
     private void initLightRectFs() {
@@ -122,13 +133,21 @@ public class MarqueeView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (isFirstDraw) {
-            canvas.drawColor(backgroundColor);
-        }
+//        if (isFirstDraw) {
+//            canvas.drawColor(backgroundColor);
+//        }
+
+//        for (int j = 0; j < lightAmount; j++) {
+//            lightPaint.setColor(lightColors[j]);
+//            canvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
+//        }
+
+        srcCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
         for (int j = 0; j < lightAmount; j++) {
             lightPaint.setColor(lightColors[j]);
-            canvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
+            srcCanvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
         }
+        canvas.drawBitmap(srcBitmap, 0, 0, imgPaint);
     }
 
     private boolean isTwinkle = false;
