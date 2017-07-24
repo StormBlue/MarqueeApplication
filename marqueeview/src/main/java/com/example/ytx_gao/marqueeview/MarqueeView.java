@@ -226,7 +226,7 @@ public class MarqueeView extends View {
 
     private int getAnimDelay() {
         int delay = (int) (30 * interpolator.getInterpolation((float) currentIndex / lightAmount));
-        Log.d(TAG, "时间间隔为------" + delay);
+//        Log.d(TAG, "时间间隔为------" + delay);
         return delay;
     }
 
