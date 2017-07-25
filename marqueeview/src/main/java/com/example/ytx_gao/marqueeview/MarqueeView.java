@@ -25,7 +25,8 @@ import java.util.concurrent.TimeUnit;
 public class MarqueeView extends View {
     private final static String TAG = "MarqueeView";
 
-    private int width, height;// view的宽与高
+    private int width;
+//    private int height;// view的宽与高
 
     private final int default_light_amount = 16;
     private final float default_light_radius = 4;
@@ -109,13 +110,17 @@ public class MarqueeView extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
         width = MeasureSpec.getSize(widthMeasureSpec);
-        height = MeasureSpec.getSize(heightMeasureSpec);
+//        height = MeasureSpec.getSize(heightMeasureSpec);
         gapWidth = ((float) width) / (gapAmount + lightAmount * 5);
         lightWidth = 5 * gapWidth;
 
-        lightDValueTop = (height - lightWidth) / 2;
+        heightMeasureSpec = MeasureSpec.makeMeasureSpec((int) lightWidth, MeasureSpec.EXACTLY);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+//        lightDValueTop = (height - lightWidth) / 2;
+        lightDValueTop = 0;
         initLightRectFs();
-        srcBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        srcBitmap = Bitmap.createBitmap(width, (int)lightWidth, Bitmap.Config.ARGB_8888);
         srcCanvas = new Canvas(srcBitmap);
     }
 

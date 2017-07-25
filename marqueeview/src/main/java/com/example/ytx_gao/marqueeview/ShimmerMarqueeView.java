@@ -15,13 +15,14 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
 
-public class ShimmerFrameLayout extends FrameLayout {
+public class ShimmerMarqueeView extends View {
 
     private static final String TAG = "ShimmerFrameLayout";
     private static final PorterDuffXfermode DST_IN_PORTER_DUFF_XFERMODE = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
@@ -115,7 +116,21 @@ public class ShimmerFrameLayout extends FrameLayout {
         }
     }
 
-    private Paint mAlphaPaint;
+    private int width;
+
+    private final int default_light_amount = 16;
+    private final float default_light_radius = 4;
+
+    private int lightAmount = default_light_amount;
+    private int gapAmount = lightAmount - 1;
+
+    private float lightWidth, gapWidth;
+    private float lightRadius = default_light_radius;
+
+    private int[] lightTargetColors = new int[lightAmount];
+    private RectF[] lightRectFs = new RectF[lightAmount];
+    private Paint lightPaint;
+
     private Paint mMaskPaint;
 
     private Mask mMask;
@@ -139,21 +154,18 @@ public class ShimmerFrameLayout extends FrameLayout {
     protected ValueAnimator mAnimator;
     protected Bitmap mMaskBitmap;
 
-    public ShimmerFrameLayout(Context context) {
+    public ShimmerMarqueeView(Context context) {
         this(context, null, 0);
     }
 
-    public ShimmerFrameLayout(Context context, AttributeSet attrs) {
+    public ShimmerMarqueeView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ShimmerFrameLayout(Context context, AttributeSet attrs, int defStyle) {
+    public ShimmerMarqueeView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        setWillNotDraw(false);
-
         mMask = new Mask();
-        mAlphaPaint = new Paint();
         mMaskPaint = new Paint();
         mMaskPaint.setAntiAlias(true);
         mMaskPaint.setDither(true);
@@ -241,6 +253,17 @@ public class ShimmerFrameLayout extends FrameLayout {
                 a.recycle();
             }
         }
+        init();
+    }
+
+    private void init() {
+        lightPaint = new Paint();
+        lightPaint.setStyle(Paint.Style.FILL);
+        lightPaint.setAntiAlias(true);
+        for (int i = 0; i < lightAmount; i++) {
+            lightTargetColors[i] = Color.argb((int) (255 * (1 - (float) i / lightAmount)), 0, 245, 170);
+//            lightTargetColors[i] = Color.rgb((int) (255 * (1 - (float) i / lightAmount)), 245, 170);
+        }
     }
 
     /**
@@ -291,15 +314,6 @@ public class ShimmerFrameLayout extends FrameLayout {
     public void setAutoStart(boolean autoStart) {
         mAutoStart = autoStart;
         resetAll();
-    }
-
-    /**
-     * Get the alpha currently used to render the base view i.e. the unhighlighted view over which the highlight is drawn.
-     *
-     * @return Alpha (opacity) of the base view
-     */
-    public float getBaseAlpha() {
-        return (float) mAlphaPaint.getAlpha() / 0xff;
     }
 
     /**
@@ -690,6 +704,26 @@ public class ShimmerFrameLayout extends FrameLayout {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+//        setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
+        width = MeasureSpec.getSize(widthMeasureSpec);
+        gapWidth = ((float) width) / (gapAmount + lightAmount * 5);
+        lightWidth = 5 * gapWidth;
+
+        initLightRectFs();
+    }
+
+    private void initLightRectFs() {
+        float gap = gapWidth + lightWidth;
+        for (int i = 0; i < lightAmount; i++) {
+            // 初始化
+            float left = i * gap;
+            lightRectFs[i] = new RectF(left, 0, left + lightWidth, lightWidth);
+        }
+    }
+
+    @Override
     protected void dispatchDraw(Canvas canvas) {
         if (!mAnimationStarted || getWidth() <= 0 || getHeight() <= 0) {
             super.dispatchDraw(canvas);
@@ -714,9 +748,12 @@ public class ShimmerFrameLayout extends FrameLayout {
             return false;
         }
         // First draw a desaturated version
-        drawUnmasked(new Canvas(unmaskBitmap));
+//        drawUnmasked(new Canvas(unmaskBitmap));
 //        canvas.drawBitmap(unmaskBitmap, 0, 0, null);
-        canvas.drawColor(Color.YELLOW);
+        for (int j = 0; j < lightAmount; j++) {
+            lightPaint.setColor(lightTargetColors[j]);
+            canvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
+        }
 
         // Then draw the masked version
         drawMasked(new Canvas(maskBitmap));
@@ -765,7 +802,12 @@ public class ShimmerFrameLayout extends FrameLayout {
 
     // Draws the children without any mask.
     private void drawUnmasked(Canvas renderCanvas) {
-        super.dispatchDraw(renderCanvas);
+//        super.dispatchDraw(renderCanvas);
+        renderCanvas.drawColor(Color.argb(100, 100, 100, 100));
+//        for (int j = 0; j < lightAmount; j++) {
+//            lightPaint.setColor(lightTargetColors[j]);
+//            renderCanvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
+//        }
     }
 
     // Draws the children and masks them on the given Canvas.
@@ -781,7 +823,11 @@ public class ShimmerFrameLayout extends FrameLayout {
                 mMaskOffsetX + maskBitmap.getWidth(),
                 mMaskOffsetY + maskBitmap.getHeight());
 //        super.dispatchDraw(renderCanvas);
-        renderCanvas.drawColor(Color.WHITE);
+//        renderCanvas.drawColor(Color.WHITE);
+        for (int j = 0; j < lightAmount; j++) {
+            lightPaint.setColor(Color.rgb(201, 255, 232));
+            renderCanvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
+        }
 
         renderCanvas.drawBitmap(maskBitmap, mMaskOffsetX, mMaskOffsetY, mMaskPaint);
     }

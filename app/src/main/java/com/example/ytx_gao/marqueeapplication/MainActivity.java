@@ -9,11 +9,12 @@ import android.view.View;
 
 import com.example.ytx_gao.marqueeview.MarqueeView;
 import com.example.ytx_gao.marqueeview.ShimmerFrameLayout;
+import com.example.ytx_gao.marqueeview.ShimmerMarqueeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private MarqueeView marqueeView;
-    private ShimmerFrameLayout container;
+    private ShimmerMarqueeLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
         container =
-                (ShimmerFrameLayout) findViewById(R.id.shimmer_view_container);
+                (ShimmerMarqueeLayout) findViewById(R.id.shimmer_view_container);
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +48,11 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.shimmerly).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                container.startShimmerAnimation();
+                if (container.isAnimationStarted()) {
+                    container.stopShimmerAnimation();
+                } else {
+                    container.startShimmerAnimation();
+                }
             }
         });
     }
