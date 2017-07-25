@@ -26,19 +26,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:background="#123a28">
+        android:background="#123a28"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
 
-        <com.example.ytx_gao.marqueeview.ShimmerMarqueeLayout
-            android:id="@+id/shimmer_view_container"
+        <com.example.ytx_gao.marqueeview.ShimmerMarqueeView
+            android:id="@+id/shimmer_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:duration="2000">
-
-            <com.example.ytx_gao.marqueeview.MarqueeView
-                android:id="@+id/marquee_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </com.example.ytx_gao.marqueeview.ShimmerMarqueeLayout>
+            app:duration="2000" />
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton

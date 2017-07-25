@@ -7,14 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.ytx_gao.marqueeview.MarqueeView;
-import com.example.ytx_gao.marqueeview.ShimmerFrameLayout;
-import com.example.ytx_gao.marqueeview.ShimmerMarqueeLayout;
+import com.example.ytx_gao.marqueeview.ShimmerMarqueeView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MarqueeView marqueeView;
-    private ShimmerMarqueeLayout container;
+    private ShimmerMarqueeView marqueeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,29 +27,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        marqueeView = (MarqueeView) findViewById(R.id.marquee_view);
-        container =
-                (ShimmerMarqueeLayout) findViewById(R.id.shimmer_view_container);
+        marqueeView =
+                (ShimmerMarqueeView) findViewById(R.id.shimmer_view);
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                marqueeView.startTwinkle();
+                marqueeView.startShimmerAnimation();
             }
         });
         findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                marqueeView.stopTwinkle();
+                marqueeView.stopShimmerAnimation();
             }
         });
         findViewById(R.id.shimmerly).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (container.isAnimationStarted()) {
-                    container.stopShimmerAnimation();
-                } else {
-                    container.startShimmerAnimation();
-                }
             }
         });
     }
