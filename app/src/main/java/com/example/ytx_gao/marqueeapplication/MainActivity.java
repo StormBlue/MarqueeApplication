@@ -7,12 +7,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.ytx_gao.marqueeview.ShimmerMarqueeView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ShimmerMarqueeView marqueeView;
+
+    private LinearLayout indicatorContainer;
 
     private int[] targetColors;
 
@@ -34,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         for (int j = 0; j < 16; j++) {
             targetColors[j] = Color.argb((int) (255 * (1 - (float) j / 16)), 0, 245, 170);
         }
-        marqueeView =
-                (ShimmerMarqueeView) findViewById(R.id.shimmer_view);
+        marqueeView = (ShimmerMarqueeView) findViewById(R.id.shimmer_view);
+        indicatorContainer = (LinearLayout) findViewById(R.id.ll_indicator_container);
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.shimmerly).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                indicatorContainer.setVisibility(indicatorContainer.getVisibility() == View.GONE?View.VISIBLE:View.GONE);
             }
         });
     }

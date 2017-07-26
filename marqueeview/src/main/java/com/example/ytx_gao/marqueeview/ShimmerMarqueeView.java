@@ -191,7 +191,7 @@ public class ShimmerMarqueeView extends View {
     public void useDefaults() {
         // Set defaults
         setAutoStart(false);
-        setProgressDuration(150);
+        setProgressDuration(300);
         setAnimatorSetDelay(0);
         setShimmerDuration(2000);
         setShimmerRepeatCount(ObjectAnimator.INFINITE);
@@ -227,10 +227,11 @@ public class ShimmerMarqueeView extends View {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (mGlobalLayoutListener == null) {
-            mGlobalLayoutListener = getLayoutListener();
-        }
-        getViewTreeObserver().addOnGlobalLayoutListener(mGlobalLayoutListener);
+        // FIXME:因visibility会触发globallayoutlistener暂时屏蔽autostart功能
+//        if (mGlobalLayoutListener == null) {
+//            mGlobalLayoutListener = getLayoutListener();
+//        }
+//        getViewTreeObserver().addOnGlobalLayoutListener(mGlobalLayoutListener);
     }
 
     private ViewTreeObserver.OnGlobalLayoutListener getLayoutListener() {

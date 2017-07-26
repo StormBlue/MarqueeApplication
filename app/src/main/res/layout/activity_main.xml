@@ -21,41 +21,78 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_actions">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TEST" />
+    </FrameLayout>
+
     <RelativeLayout
-        android:id="@+id/contianer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_actions"
-        android:background="#123a28"
-        android:paddingBottom="3dp"
-        android:paddingTop="3dp">
+        android:layout_above="@+id/bottom_actions">
 
-        <ImageView
-            android:id="@+id/img_hjjtzx_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:src="@drawable/ic_hjjt_strong_short" />
+        <LinearLayout
+            android:id="@+id/ll_indicator_container"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorAccent"
+            android:orientation="horizontal"
+            android:visibility="visible">
 
-        <com.example.ytx_gao.marqueeview.ShimmerMarqueeView
-            android:id="@+id/shimmer_view"
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/marquee_contianer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/img_hjjtzx_dislog_arrow"
-            android:layout_toRightOf="@+id/img_hjjtzx_status"
-            app:shimmer_repeat_count="0" />
+            android:layout_above="@+id/ll_indicator_container"
+            android:background="#123a28"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp">
 
-        <ImageView
-            android:id="@+id/img_hjjtzx_dislog_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:src="@drawable/ic_short_arrows_down" />
+            <ImageView
+                android:id="@+id/img_hjjtzx_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:src="@drawable/ic_hjjt_strong_short" />
+
+            <com.example.ytx_gao.marqueeview.ShimmerMarqueeView
+                android:id="@+id/shimmer_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_hjjtzx_dislog_arrow"
+                android:layout_toRightOf="@+id/img_hjjtzx_status"
+                app:shimmer_repeat_count="0" />
+
+            <ImageView
+                android:id="@+id/img_hjjtzx_dislog_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:src="@drawable/ic_short_arrows_down" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/marquee_contianer"
+            android:background="#aeaeaeae"
+            android:clickable="true" />
+
     </RelativeLayout>
 
     <RelativeLayout
