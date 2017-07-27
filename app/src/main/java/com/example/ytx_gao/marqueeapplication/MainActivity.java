@@ -1,5 +1,8 @@
 package com.example.ytx_gao.marqueeapplication;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,21 +10,25 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
+import com.example.ytx_gao.marqueeapplication.widget.HJJTZXIndicatorView;
 import com.example.ytx_gao.marqueeview.ShimmerMarqueeView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ShimmerMarqueeView marqueeView;
-
-    private LinearLayout indicatorContainer;
+    private Context mContext;
 
     private int[] targetColors;
+
+    private HJJTZXIndicatorView hjjtzxIndicatorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this;
         setContentView(R.layout.activity_main);
         init();
     }
@@ -37,25 +44,22 @@ public class MainActivity extends AppCompatActivity {
         for (int j = 0; j < 16; j++) {
             targetColors[j] = Color.argb((int) (255 * (1 - (float) j / 16)), 0, 245, 170);
         }
-        marqueeView = (ShimmerMarqueeView) findViewById(R.id.shimmer_view);
-        indicatorContainer = (LinearLayout) findViewById(R.id.ll_indicator_container);
+        hjjtzxIndicatorView = (HJJTZXIndicatorView) findViewById(R.id.hjjtzx_indicator);
         findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                marqueeView.setLightTargetColors(targetColors);
-                marqueeView.startAnimations();
             }
         });
         findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                marqueeView.stopAnimations();
+
             }
         });
         findViewById(R.id.shimmerly).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                indicatorContainer.setVisibility(indicatorContainer.getVisibility() == View.GONE?View.VISIBLE:View.GONE);
+                hjjtzxIndicatorView.setHJJTData(targetColors);
             }
         });
     }
