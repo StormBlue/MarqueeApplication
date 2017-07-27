@@ -37,8 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
             android:src="@drawable/ic_short_arrows_down" />
     </RelativeLayout>
 
