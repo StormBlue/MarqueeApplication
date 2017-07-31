@@ -6,52 +6,52 @@
         <attr name="gray_color" format="color" />
     </declare-styleable>
 
-    <attr name="auto_start" format="boolean" />
-    <attr name="duration" format="integer" />
-    <attr name="repeat_count" format="integer" />
-    <attr name="repeat_delay" format="integer" />
-    <attr name="repeat_mode" format="enum">
-        <enum name="restart" value="1" />
-        <enum name="reverse" value="2" />
-    </attr>
-    <attr name="angle" format="enum">
-        <enum name="cw_0" value="0" />
-        <enum name="cw_90" value="90" />
-        <enum name="cw_180" value="180" />
-        <enum name="cw_270" value="270" />
-    </attr>
-    <attr name="dropoff" format="float" />
-    <attr name="fixed_width" format="dimension" />
-    <attr name="fixed_height" format="dimension" />
-    <attr name="intensity" format="float" />
-    <attr name="relative_width" format="float" />
-    <attr name="relative_height" format="float" />
-    <attr name="shape" format="enum">
-        <enum name="linear" value="0" />
-        <enum name="radial" value="1" />
-    </attr>
-    <attr name="tilt" format="float" />
+    <!--<attr name="auto_start" format="boolean" />-->
+    <!--<attr name="duration" format="integer" />-->
+    <!--<attr name="repeat_count" format="integer" />-->
+    <!--<attr name="repeat_delay" format="integer" />-->
+    <!--<attr name="repeat_mode" format="enum">-->
+        <!--<enum name="restart" value="1" />-->
+        <!--<enum name="reverse" value="2" />-->
+    <!--</attr>-->
+    <!--<attr name="angle" format="enum">-->
+        <!--<enum name="cw_0" value="0" />-->
+        <!--<enum name="cw_90" value="90" />-->
+        <!--<enum name="cw_180" value="180" />-->
+        <!--<enum name="cw_270" value="270" />-->
+    <!--</attr>-->
+    <!--<attr name="dropoff" format="float" />-->
+    <!--<attr name="fixed_width" format="dimension" />-->
+    <!--<attr name="fixed_height" format="dimension" />-->
+    <!--<attr name="intensity" format="float" />-->
+    <!--<attr name="relative_width" format="float" />-->
+    <!--<attr name="relative_height" format="float" />-->
+    <!--<attr name="shape" format="enum">-->
+        <!--<enum name="linear" value="0" />-->
+        <!--<enum name="radial" value="1" />-->
+    <!--</attr>-->
+    <!--<attr name="tilt" format="float" />-->
 
-    <declare-styleable name="ShimmerFrameLayout">
-        <attr name="auto_start" />
-        <attr name="duration" />
-        <attr name="repeat_count" />
-        <attr name="repeat_delay" />
-        <attr name="repeat_mode" />
-        <attr name="angle" />
-        <attr name="dropoff" />
-        <attr name="fixed_width" />
-        <attr name="fixed_height" />
-        <attr name="intensity" />
-        <attr name="relative_width" />
-        <attr name="relative_height" />
-        <attr name="shape" />
-        <attr name="tilt" />
-        <attr name="base_alpha" format="float" />
-    </declare-styleable>
+    <!--<declare-styleable name="ShimmerFrameLayout">-->
+        <!--<attr name="auto_start" />-->
+        <!--<attr name="duration" />-->
+        <!--<attr name="repeat_count" />-->
+        <!--<attr name="repeat_delay" />-->
+        <!--<attr name="repeat_mode" />-->
+        <!--<attr name="angle" />-->
+        <!--<attr name="dropoff" />-->
+        <!--<attr name="fixed_width" />-->
+        <!--<attr name="fixed_height" />-->
+        <!--<attr name="intensity" />-->
+        <!--<attr name="relative_width" />-->
+        <!--<attr name="relative_height" />-->
+        <!--<attr name="shape" />-->
+        <!--<attr name="tilt" />-->
+        <!--<attr name="base_alpha" format="float" />-->
+    <!--</declare-styleable>-->
 
     <declare-styleable name="ShimmerMarqueeView">
-        <attr name="auto_start" />
+        <attr name="auto_start" format="boolean"/>
         <attr name="animator_set_delay" format="integer" />
         <attr name="progress_duration" format="integer" />
         <attr name="shimmer_duration" format="integer" />
@@ -78,5 +78,16 @@
             <enum name="radial" value="1" />
         </attr>
         <attr name="shimmer_tilt" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="MeterView">
+        <attr name="meter_img" format="reference" />
+        <attr name="meter_centerx_ratio" format="float" />
+        <attr name="meter_centery_ratio" format="float" />
+        <attr name="pointer_img" format="reference" />
+        <attr name="pointer_centerx_ratio" format="float" />
+        <attr name="pointer_centery_ratio" format="float" />
+        <attr name="target_angle" format="integer" />
+        <attr name="anim_duration" format="integer" />
     </declare-styleable>
 </resources>

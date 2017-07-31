@@ -79,8 +79,8 @@ public class HJJTZXIndicatorView extends RelativeLayout implements View.OnClickL
         contentArrowImg = (ImageView) findViewById(R.id.img_hjjtzx_dialog_arrow);
     }
 
-    public void setHJJTData(int[] targetColors) {
-        shimmerMarqueeView.setLightTargetColors(targetColors);
+    public void setHJJTData(int[] targetAlphas) {
+        shimmerMarqueeView.setLightTargetAlphas(targetAlphas);
         shimmerMarqueeView.startAnimations();
     }
 

@@ -24,7 +24,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.LinearInterpolator;
 
-public class ShimmerMarqueeView extends View {
+public class ShimmerMarqueeView_bak extends View {
 
     private static final String TAG = "ShimmerMarqueeView";
     private static final PorterDuffXfermode DST_IN_PORTER_DUFF_XFERMODE = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
@@ -48,11 +48,10 @@ public class ShimmerMarqueeView extends View {
     private int lightBrightColor = default_light_bright_color;
     private int lightGrayColor = default_light_gray_color;
 
-    private int[] lightTargetAlphas = new int[lightAmount];
-    private int[] lightCurrentAlphas = new int[lightAmount];
+    private int[] lightTargetColors = new int[lightAmount];
+    private int[] lightCurrentColors = new int[lightAmount];
     private RectF[] lightRectFs = new RectF[lightAmount];
     private Paint lightPaint;
-    private Shader lightGradient;
 
     private Paint mMaskShimmerPaint, mMaskPaint;
 
@@ -77,15 +76,15 @@ public class ShimmerMarqueeView extends View {
     protected ValueAnimator mProgressAnimator, mNullAnimator, mShimmerAnimator;
     protected Bitmap mShimmerMaskBitmap;
 
-    public ShimmerMarqueeView(Context context) {
+    public ShimmerMarqueeView_bak(Context context) {
         this(context, null, 0);
     }
 
-    public ShimmerMarqueeView(Context context, AttributeSet attrs) {
+    public ShimmerMarqueeView_bak(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ShimmerMarqueeView(Context context, AttributeSet attrs, int defStyle) {
+    public ShimmerMarqueeView_bak(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         mShimmerMask = new ShimmerMask();
@@ -219,8 +218,9 @@ public class ShimmerMarqueeView extends View {
         lightPaint.setStyle(Paint.Style.FILL);
         lightPaint.setAntiAlias(true);
         for (int i = 0; i < lightAmount; i++) {
-            lightCurrentAlphas[i] = (int) (255 * (1 - (float) i / lightAmount));
-            lightTargetAlphas[i] = (int) (255 * (1 - (float) i / lightAmount));
+            lightCurrentColors[i] = lightGrayColor;
+            lightTargetColors[i] = Color.argb((int) (255 * (1 - (float) i / lightAmount)), 0, 245, 170);
+//            lightTargetColors[i] = Color.rgb((int) (255 * (1 - (float) i / lightAmount)), 245, 170);
         }
     }
 
@@ -278,19 +278,6 @@ public class ShimmerMarqueeView extends View {
             float left = i * gap;
             lightRectFs[i] = new RectF(left, 0, left + lightWidth, lightWidth);
         }
-        lightGradient = new LinearGradient(
-                0, 0,
-                0, height,
-                Color.rgb(88, 247, 176),
-                Color.rgb(82, 227, 163),
-                Shader.TileMode.REPEAT);
-//        lightGradient = new LinearGradient(
-//                0, 0,
-//                0, height,
-//                Color.rgb(253, 72, 50),
-//                Color.rgb(254, 39, 39),
-//                Shader.TileMode.REPEAT);
-        lightPaint.setShader(lightGradient);
     }
 
     @Override
@@ -304,15 +291,12 @@ public class ShimmerMarqueeView extends View {
     }
 
     private void drawCurrentStyle(Canvas renderCanvas) {
-        Log.d(TAG, "drawCurrentStyle===start");
         for (int j = 0; j < lightAmount; j++) {
-            if (lightPaint.getAlpha() != lightCurrentAlphas[j]) {
-                Log.d(TAG, "drawCurrentStyle===lightCurrentAlphas:" + lightCurrentAlphas[j]);
-                lightPaint.setAlpha(lightCurrentAlphas[j]);
+            if (lightPaint.getColor() != lightCurrentColors[j]) {
+                lightPaint.setColor(lightCurrentColors[j]);
             }
             renderCanvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
         }
-        Log.d(TAG, "drawCurrentStyle===end");
     }
 
     /**
@@ -327,8 +311,8 @@ public class ShimmerMarqueeView extends View {
         }
         // First draw a original version
         for (int j = 0; j < lightAmount; j++) {
-            if (lightPaint.getAlpha() != lightCurrentAlphas[j]) {
-                lightPaint.setAlpha(lightCurrentAlphas[j]);
+            if (lightPaint.getColor() != lightCurrentColors[j]) {
+                lightPaint.setColor(lightTargetColors[j]);
             }
             canvas.drawRoundRect(lightRectFs[j], lightRadius, lightRadius, lightPaint);
         }
@@ -340,12 +324,12 @@ public class ShimmerMarqueeView extends View {
         return true;
     }
 
-    public void setLightTargetAlphas(int[] targetAlphas) {
-        if (targetAlphas == null) {
+    public void setLightTargetColors(int[] targetColors) {
+        if (targetColors == null) {
             return;
         }
-        int minAmount = Math.min(targetAlphas.length, lightAmount);
-        System.arraycopy(targetAlphas, 0, lightTargetAlphas, 0, minAmount);
+        int minAmount = Math.min(targetColors.length, lightAmount);
+        System.arraycopy(targetColors, 0, lightTargetColors, 0, minAmount);
         resetAll();
     }
 
@@ -455,7 +439,7 @@ public class ShimmerMarqueeView extends View {
     private void resetAll() {
         stopAnimations();
         for (int j = 0; j < lightAmount; j++) {
-            lightCurrentAlphas[j] = 0;
+            lightCurrentColors[j] = lightGrayColor;
         }
         resetMaskBitmap();
         resetRenderedView();
@@ -583,7 +567,6 @@ public class ShimmerMarqueeView extends View {
 
             }
         });
-//        mAnimatorSet.playSequentially(getProgressAnimation());
         mAnimatorSet.playSequentially(getProgressAnimation(), getNullAnimation(), getShimmerAnimation());
         return mAnimatorSet;
     }
@@ -661,8 +644,8 @@ public class ShimmerMarqueeView extends View {
             public void onAnimationUpdate(ValueAnimator animation) {
                 int value = (int) animation.getAnimatedValue();
                 for (int i = 0; i <= value; i++) {
-                    if (lightCurrentAlphas[i] != lightTargetAlphas[i]) {
-                        lightCurrentAlphas[i] = lightTargetAlphas[i];
+                    if (lightCurrentColors[i] != lightTargetColors[i]) {
+                        lightCurrentColors[i] = lightTargetColors[i];
                     }
                 }
                 invalidate();
