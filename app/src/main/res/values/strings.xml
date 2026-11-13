@@ -16,4 +16,17 @@
     <string name="gradient_description">Fading light strip</string>
     <string name="reverse_description">Reverse light strip</string>
     <string name="level_control">Light level</string>
+    <string name="open_gallery">Explore gradient directions</string>
+    <string name="gallery_eyebrow">MARQUEE / COLOR STUDIO</string>
+    <string name="gallery_title">Every direction.</string>
+    <string name="gallery_subtitle">One gradient per light. A whole spectrum of possibilities.</string>
+    <string name="gallery_back">Back</string>
+    <string name="gallery_aurora">Aurora · 0° →</string>
+    <string name="gallery_sunset">Sunset · 45° ↘</string>
+    <string name="gallery_orchid">Orchid · 90° ↓</string>
+    <string name="gallery_glacier">Glacier · 135° ↙</string>
+    <string name="gallery_custom">Candy · your direction</string>
+    <string name="gallery_angle">%1$d°</string>
+    <string name="gallery_hint">Drag to explore any angle · 0–359°</string>
+    <string name="gallery_angle_control">Custom gradient direction in degrees</string>
 </resources>

@@ -41,4 +41,37 @@ class SampleStateTest {
             } finally { instrumentation.removeMonitor(monitor) }
         } finally { instrumentation.runOnMainSync { activity.finish() } }
     }
+    @Test fun galleryShowsDifferentDirectionsAndRestoresCustomAngle() {
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        var activity = instrumentation.startActivitySync(Intent(instrumentation.targetContext, GradientGalleryActivity::class.java)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) as GradientGalleryActivity
+        try {
+            instrumentation.waitForIdleSync()
+            instrumentation.runOnMainSync {
+                val ids = listOf(R.id.gallery_aurora, R.id.gallery_sunset, R.id.gallery_orchid, R.id.gallery_glacier)
+                ids.zip(listOf(0f, 45f, 90f, 135f)).forEach { (id, angle) ->
+                    val strip = activity.findViewById<MarqueeView>(id)
+                    assertEquals(angle, strip.gradientAngle)
+                    assertTrue(strip.gradientEnabled)
+                    assertEquals(1f, strip.progress)
+                }
+                assertEquals(237f, activity.findViewById<MarqueeView>(R.id.gallery_custom).gradientAngle)
+                activity.findViewById<SeekBar>(R.id.gallery_angle_slider).progress = 312
+                assertEquals(312f, activity.findViewById<MarqueeView>(R.id.gallery_custom).gradientAngle)
+                assertEquals(activity.getString(R.string.gallery_angle, 312), activity.findViewById<TextView>(R.id.gallery_angle_value).text)
+            }
+            val monitor = instrumentation.addMonitor(GradientGalleryActivity::class.java.name, null, false)
+            try {
+                instrumentation.runOnMainSync { activity.recreate() }
+                activity = monitor.waitForActivityWithTimeout(5000) as GradientGalleryActivity
+                instrumentation.waitForIdleSync()
+                instrumentation.runOnMainSync {
+                    assertEquals(312, activity.findViewById<SeekBar>(R.id.gallery_angle_slider).progress)
+                    assertEquals(312f, activity.findViewById<MarqueeView>(R.id.gallery_custom).gradientAngle)
+                    assertEquals(activity.getString(R.string.gallery_angle, 312), activity.findViewById<TextView>(R.id.gallery_angle_value).text)
+                }
+            } finally { instrumentation.removeMonitor(monitor) }
+        } finally { instrumentation.runOnMainSync { activity.finish() } }
+    }
+
 }

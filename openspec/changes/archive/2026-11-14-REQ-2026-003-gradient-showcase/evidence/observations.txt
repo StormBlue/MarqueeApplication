@@ -1,0 +1,7 @@
+API37 sample instrumentation results: [{"tests": "2", "failures": "0", "errors": "0", "skipped": "0", "timestamp": "2026-11-13T18:42:11"}]
+App and library lint XML: zero issue elements.
+
+Visual inspection: docs/gradients.gif and docs/gradients.png, actual API37 1080x2400 sample recording cropped to content. GIF 432x800, 188 frames, 15.66 seconds, infinite loop, 3295659 bytes, 186 changed frame pairs. Contact sheet inspected at two-second intervals: five readable palettes, fixed 0/45/90/135-degree per-block gradients, slider visibly changes custom angle through 19/312/160 degrees and returns to 237. No clipping. README local media and links resolve. Previous docs/demo.gif retained.
+
+Independent integrated/UX/performance review by gallery_review: no actionable findings. Restored angle, slider and label remain consistent; no per-frame angle or Shader rebuilding introduced. Insets, labels and slider touch height checked. Reviewer performed static review, not device tests.
+Component and dependency files unchanged. Angle changes only in slider callback; sweeps reuse existing component caches. Existing 32-test baseline and frame measurements are historical, not rerun or remeasured for this sample-only change.

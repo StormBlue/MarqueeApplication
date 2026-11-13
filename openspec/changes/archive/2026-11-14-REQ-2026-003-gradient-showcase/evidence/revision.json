@@ -1,0 +1,88 @@
+{
+  "base_commit": "bac894d4915c6d9624510b48d5042bc3e1cb691a",
+  "changed_paths": [
+    "README.md",
+    "app/src/androidTest/kotlin/io/github/stormblue/marqueeview/sample/SampleStateTest.kt",
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/kotlin/io/github/stormblue/marqueeview/sample/GradientGalleryActivity.kt",
+    "app/src/main/kotlin/io/github/stormblue/marqueeview/sample/MainActivity.kt",
+    "app/src/main/res/layout/activity_gradient_gallery.xml",
+    "app/src/main/res/layout/activity_main.xml",
+    "app/src/main/res/values/strings.xml",
+    "app/src/main/res/values/styles.xml",
+    "docs/gradients.gif",
+    "docs/gradients.png",
+    "docs/verification.md"
+  ],
+  "entries": [
+    {
+      "path": "README.md",
+      "sha256": "15b0ea7479c1e61c7914506da86911cd72ef6070e2c314d0cd467be084d0b335",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/androidTest/kotlin/io/github/stormblue/marqueeview/sample/SampleStateTest.kt",
+      "sha256": "278d625038eae2b6e7dc13e5d1647c2c4df55df5db55d24702d294038354ca06",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "d195b28867e406be1c5f769b6bb87f84f35405681268dbe496978504aedd49d0",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/kotlin/io/github/stormblue/marqueeview/sample/GradientGalleryActivity.kt",
+      "sha256": "2c1b14fb088ce2edf11142427e3d2d46b7e1391152a5625d816205b91af784a1",
+      "status": "added"
+    },
+    {
+      "path": "app/src/main/kotlin/io/github/stormblue/marqueeview/sample/MainActivity.kt",
+      "sha256": "a4470a017a9c913b6cc8f4bf42eb45a56cfd21d014efb0374c9e6644bccd96b7",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_gradient_gallery.xml",
+      "sha256": "1d9dea0b357d283e9dee184c09ab6bff4e4ee29ade60f149079ae2cbca8e3721",
+      "status": "added"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main.xml",
+      "sha256": "7dfef3ae9d9149a1846fc9e81c5ae0a9653beee61e63c3986917c8f7211a182f",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "sha256": "b1b7794fe0524c515c038fe1d82932d2fb29618e55c55ec355c892f3f9fa22ec",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "sha256": "2de569505259a0725ff6e1c75f9849cc843608613521bcdc95b7570c7202a631",
+      "status": "modified"
+    },
+    {
+      "path": "docs/gradients.gif",
+      "sha256": "6b58b23ea17b548830cb798683c62033fde7788b92ce60d07d332734af7cd458",
+      "status": "added"
+    },
+    {
+      "path": "docs/gradients.png",
+      "sha256": "b3a71ca1528c227088f629fb4ebe4237207c6cf9bd6854203ccfdf1571271bed",
+      "status": "added"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha256": "2b517f3f634e1be41369abc6ea7db9237abef1d62db77ac97a23231ea4032dc4",
+      "status": "modified"
+    }
+  ],
+  "kind": "dev-spec-flow-revision-capture",
+  "schema_version": 1,
+  "scope": [
+    "README.md",
+    "app/**",
+    "docs/gradients.*",
+    "docs/verification.md"
+  ],
+  "worktree_state": "scoped-dirty"
+}

@@ -26,3 +26,11 @@
 本次没有真机或组件版本间的对照跑分，不据此声称稳定 60fps 或提升百分比。API 23 兼容性通过 lint 与 API 守卫检查，实际设备覆盖 API 30 / 37；尚未进行 TalkBack 人工朗读验证。GitHub Actions 已更新，远程 CI 执行结果不属于上述本机验证结果。Maven Central 尚未发布。
 
 详细命令、测试结果和原始采样保存在 [变更归档](../openspec/changes/archive/)。
+
+## 任意方向渐变展示
+
+新增五组配色展示页：0°、45°、90°、135° 与可拖动的 0–359°。角度只在滑杆变化时更新；扫光复用组件现有的逐块 Shader 缓存。
+
+- 在专用 API 37 AVD 上执行 `:app:assembleDebug :app:assembleRelease lint :app:connectedDebugAndroidTest --no-parallel --console=plain`，构建通过、两个示例设备测试通过、App 与库 lint 零问题。新测试确认固定方向，并验证自定义 312° 在 Activity 重建后与滑杆、标签一致。
+- [渐变 GIF](gradients.gif) 来自示例实际录屏，展示五组配色、循环扫光与任意角度调节；[静态截图](gradients.png) 与 GIF 画面已人工检查。原有播放控制 GIF 仍保留。
+- 此次仅修改示例与文档，组件实现及依赖未变；上述 32 项组件/示例验证与性能采样属于此前组件基线，不是本次重复执行的结果。

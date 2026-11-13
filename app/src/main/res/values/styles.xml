@@ -5,4 +5,25 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowBackground">#F4F7F6</item>
     </style>
+    <style name="GalleryTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#B8A2FF</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#0B1020</item>
+        <item name="android:statusBarColor">#0B1020</item>
+        <item name="android:navigationBarColor">#0B1020</item>
+    </style>
+    <style name="GalleryLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#EDF2FF</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="GalleryStrip">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">22dp</item>
+    </style>
 </resources>

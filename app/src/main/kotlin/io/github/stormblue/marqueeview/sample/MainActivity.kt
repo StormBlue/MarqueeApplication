@@ -52,6 +52,9 @@ class MainActivity : Activity() {
         findViewById<View>(R.id.clear).setOnClickListener {
             marquee.stop(); marquee.progress = 0f; slider.progress = 0; showValue()
         }
+        findViewById<View>(R.id.open_gallery).setOnClickListener {
+            startActivity(android.content.Intent(this, GradientGalleryActivity::class.java))
+        }
         showValue()
     }
     override fun onPostCreate(savedInstanceState: Bundle?) {

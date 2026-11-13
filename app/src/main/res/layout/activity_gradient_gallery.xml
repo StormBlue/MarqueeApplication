@@ -1,0 +1,32 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gallery_root" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false">
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/gallery_eyebrow" android:textColor="#B8A2FF" android:textSize="11sp" android:letterSpacing="0.12" />
+            <Button android:id="@+id/gallery_back" style="?android:attr/buttonBarButtonStyle" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/gallery_back" android:textColor="#9AA9C6" />
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/gallery_title" android:textColor="#F6F7FF" android:textSize="36sp" android:fontFamily="sans-serif-medium" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/gallery_subtitle" android:textColor="#9AA9C6" android:textSize="14sp" android:layout_marginTop="8dp" android:layout_marginBottom="26dp" />
+        <TextView style="@style/GalleryLabel" android:text="@string/gallery_aurora" />
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/gallery_aurora" style="@style/GalleryStrip"
+            android:contentDescription="@string/gallery_aurora" app:marqueeSegmentCount="8" app:marqueeSegmentSpacing="6dp" app:marqueeCornerRadius="6dp" app:marqueeProgress="1" app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#3AF5D0" app:marqueeGradientEndColor="#3487FF" app:marqueeGradientAngle="0" app:marqueeTrackColor="#172139" app:marqueeShimmerColor="#3AF5D0" app:marqueeShimmerDuration="2400" app:marqueeAutoStart="true" />
+        <TextView style="@style/GalleryLabel" android:text="@string/gallery_sunset" />
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/gallery_sunset" style="@style/GalleryStrip"
+            android:contentDescription="@string/gallery_sunset" app:marqueeSegmentCount="8" app:marqueeSegmentSpacing="6dp" app:marqueeCornerRadius="6dp" app:marqueeProgress="1" app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#FFD66B" app:marqueeGradientEndColor="#FB598D" app:marqueeGradientAngle="45" app:marqueeTrackColor="#172139" app:marqueeShimmerColor="#FFD66B" app:marqueeShimmerDuration="2800" app:marqueeAutoStart="true" />
+        <TextView style="@style/GalleryLabel" android:text="@string/gallery_orchid" />
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/gallery_orchid" style="@style/GalleryStrip"
+            android:contentDescription="@string/gallery_orchid" app:marqueeSegmentCount="8" app:marqueeSegmentSpacing="6dp" app:marqueeCornerRadius="6dp" app:marqueeProgress="1" app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#F8A1DB" app:marqueeGradientEndColor="#8B6AFF" app:marqueeGradientAngle="90" app:marqueeTrackColor="#172139" app:marqueeShimmerColor="#F8A1DB" app:marqueeShimmerDuration="3200" app:marqueeAutoStart="true" />
+        <TextView style="@style/GalleryLabel" android:text="@string/gallery_glacier" />
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/gallery_glacier" style="@style/GalleryStrip"
+            android:contentDescription="@string/gallery_glacier" app:marqueeSegmentCount="8" app:marqueeSegmentSpacing="6dp" app:marqueeCornerRadius="6dp" app:marqueeProgress="1" app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#70D9FF" app:marqueeGradientEndColor="#3268F3" app:marqueeGradientAngle="135" app:marqueeTrackColor="#172139" app:marqueeShimmerColor="#70D9FF" app:marqueeShimmerDuration="2600" app:marqueeAutoStart="true" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false">
+            <TextView style="@style/GalleryLabel" android:layout_width="0dp" android:layout_weight="1" android:text="@string/gallery_custom" />
+            <TextView android:id="@+id/gallery_angle_value" style="@style/GalleryLabel" android:textColor="#E6BEFF" />
+        </LinearLayout>
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/gallery_custom" style="@style/GalleryStrip" android:layout_marginBottom="4dp"
+            android:contentDescription="@string/gallery_custom" app:marqueeSegmentCount="8" app:marqueeSegmentSpacing="6dp" app:marqueeCornerRadius="6dp" app:marqueeProgress="1" app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#FF8C7A" app:marqueeGradientEndColor="#AD68FF" app:marqueeGradientAngle="237" app:marqueeTrackColor="#172139" app:marqueeShimmerColor="#FF8C7A" app:marqueeShimmerDuration="2400" app:marqueeAutoStart="true" />
+        <SeekBar android:id="@+id/gallery_angle_slider" android:layout_width="match_parent" android:layout_height="48dp" android:max="359" android:progress="237" android:contentDescription="@string/gallery_angle_control" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/gallery_hint" android:textColor="#9AA9C6" android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

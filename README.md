@@ -2,9 +2,9 @@
 
 轻量的 Android 分段灯带跑马灯组件：逐段点亮、逐灯亮度和循环扫光。Kotlin 原生 View，支持 XML、Java、Kotlin 与 Compose `AndroidView`，最低 Android 6.0（API 23）。
 
-<img src="docs/demo.gif" alt="跑马灯动画演示：逐段点亮、斜向渐变、循环扫光和亮度调节" width="360" />
+<img src="docs/gradients.gif" alt="五组渐变配色与 0°、45°、90°、135° 及任意角度的逐块渐变演示" width="360" />
 
-演示包含逐段点亮、斜向渐变、扫光、停止 / 恢复和亮度调节。[查看静态截图](docs/sample.png)。
+青绿蓝、落日金粉、兰花紫、冰川蓝与糖果紫五组配色，对比 0°、45°、90°、135°，并拖动滑杆演示任意方向（初始 237°）。每个子块内部独立渐变。[静态预览](docs/gradients.png) · [逐段点亮与播放控制 GIF](docs/demo.gif)。
 
 ## 特性
 
@@ -150,7 +150,7 @@ AndroidView(
 ./gradlew :marqueeview:publishToMavenLocal
 ```
 
-示例包含亮度滑杆、逐段点亮、开始 / 停止 / 清空、45° / 135° 逐段渐变、逐灯亮度和反向扫光。设备测试覆盖参数、每段渐变方向与颜色、动画中 Shader 缓存复用、像素绘制、RTL、测量、数组隔离、保存恢复、无障碍、XML、动画转向和生命周期。GitHub Actions 编译示例和测试 APK、运行 lint 并检查本地发布；设备测试可在连接的设备 / AVD 上运行。多项目共享模拟器时，使用 `ANDROID_SERIAL=设备序列号` 选择专用设备；测试涉及系统动画开关并会恢复其原值。
+示例的 **Explore gradient directions** 打开配色与方向展示页，可拖动 0–359° 滑杆并在重建后恢复所选方向。主页面包含亮度滑杆、逐段点亮、开始 / 停止 / 清空、45° / 135° 逐段渐变、逐灯亮度和反向扫光。设备测试覆盖参数、每段渐变方向与颜色、动画中 Shader 缓存复用、像素绘制、RTL、测量、数组隔离、保存恢复、无障碍、XML、动画转向和生命周期。GitHub Actions 编译示例和测试 APK、运行 lint 并检查本地发布；设备测试可在连接的设备 / AVD 上运行。多项目共享模拟器时，使用 `ANDROID_SERIAL=设备序列号` 选择专用设备；测试涉及系统动画开关并会恢复其原值。
 
 ## 许可证
 
