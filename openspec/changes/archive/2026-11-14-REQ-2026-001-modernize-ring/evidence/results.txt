@@ -1,0 +1,4 @@
+TEST-CircularRing_API30(AVD) - 11.xml {'tests': '6', 'failures': '0', 'errors': '0', 'skipped': '0', 'time': '0.000', 'timestamp': '2026-11-13T17:47:12', 'hostname': 'localhost'}
+TEST-RingProgress_API37(AVD) - 17.xml {'tests': '6', 'failures': '0', 'errors': '0', 'skipped': '0', 'time': '0.000', 'timestamp': '2026-11-13T17:47:13', 'hostname': 'localhost'}
+app/build/reports/lint-results-debug.xml: 0 issues
+ringprogress/build/reports/lint-results-debug.xml: 0 issues

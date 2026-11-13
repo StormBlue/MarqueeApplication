@@ -1,0 +1,520 @@
+{
+  "base_commit": "c79b964ec182f9384aa8a3c3b066edfd378e4f05",
+  "changed_paths": [
+    ".github/workflows/android.yml",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "app/build.gradle",
+    "app/build.gradle.kts",
+    "app/proguard-rules.pro",
+    "app/src/androidTest/java/com/example/ytx_gao/marqueeapplication/ExampleInstrumentedTest.java",
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/java/com/example/ytx_gao/marqueeapplication/MainActivity.java",
+    "app/src/main/java/com/example/ytx_gao/marqueeapplication/MeterViewTestActivity.java",
+    "app/src/main/java/com/example/ytx_gao/marqueeapplication/widget/HJJTZXIndicatorView.java",
+    "app/src/main/kotlin/io/github/stormblue/ringprogress/sample/MainActivity.kt",
+    "app/src/main/res/drawable/ic_launcher.xml",
+    "app/src/main/res/drawable/marquee_bg.jpg",
+    "app/src/main/res/layout/activity_main.xml",
+    "app/src/main/res/layout/activity_meter_view_test.xml",
+    "app/src/main/res/layout/layout_hjjtzx_indicator.xml",
+    "app/src/main/res/menu/menu_main.xml",
+    "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+    "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+    "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+    "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+    "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+    "app/src/main/res/values/colors.xml",
+    "app/src/main/res/values/dimens.xml",
+    "app/src/main/res/values/strings.xml",
+    "app/src/main/res/values/styles.xml",
+    "app/src/main/res/xml/data_extraction_rules.xml",
+    "app/src/test/java/com/example/ytx_gao/marqueeapplication/ExampleUnitTest.java",
+    "build.gradle",
+    "build.gradle.kts",
+    "docs/sample.png",
+    "docs/verification.md",
+    "gradle.properties",
+    "gradle/wrapper/gradle-wrapper.jar",
+    "gradle/wrapper/gradle-wrapper.properties",
+    "gradlew",
+    "gradlew.bat",
+    "marqueeview/.gitignore",
+    "marqueeview/build.gradle",
+    "marqueeview/proguard-rules.pro",
+    "marqueeview/src/androidTest/java/com/example/ytx_gao/marqueeview/ExampleInstrumentedTest.java",
+    "marqueeview/src/main/AndroidManifest.xml",
+    "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/HJJTZXMeterView.java",
+    "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/MarqueeView.java",
+    "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/ShimmerFrameLayout.java",
+    "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/ShimmerMarqueeView.java",
+    "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/ShimmerMarqueeView_bak.java",
+    "marqueeview/src/main/res/anim/in_from_down.xml",
+    "marqueeview/src/main/res/anim/out_from_up.xml",
+    "marqueeview/src/main/res/drawable-xhdpi/bg_hjjt_hot_cold.png",
+    "marqueeview/src/main/res/drawable-xhdpi/bg_hjjt_strong_weak.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_pointer.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_strong_long.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_strong_short.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_weak_long.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_weak_short.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_long_arrows_down.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_long_arrows_up.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_short_arrows_down.png",
+    "marqueeview/src/main/res/drawable-xhdpi/ic_short_arrows_up.png",
+    "marqueeview/src/main/res/drawable-xxhdpi/ic_hjjt_pointer.png",
+    "marqueeview/src/main/res/values/attrs.xml",
+    "marqueeview/src/main/res/values/colors.xml",
+    "marqueeview/src/main/res/values/strings.xml",
+    "marqueeview/src/test/java/com/example/ytx_gao/marqueeview/ExampleUnitTest.java",
+    "ringprogress/.gitignore",
+    "ringprogress/build.gradle.kts",
+    "ringprogress/src/androidTest/kotlin/io/github/stormblue/ringprogress/RingProgressViewTest.kt",
+    "ringprogress/src/debug/AndroidManifest.xml",
+    "ringprogress/src/debug/kotlin/io/github/stormblue/ringprogress/TestActivity.kt",
+    "ringprogress/src/main/AndroidManifest.xml",
+    "ringprogress/src/main/kotlin/io/github/stormblue/ringprogress/RingProgressView.kt",
+    "ringprogress/src/main/res/values/attrs.xml",
+    "settings.gradle",
+    "settings.gradle.kts"
+  ],
+  "entries": [
+    {
+      "path": ".github/workflows/android.yml",
+      "sha256": "31cdb2c6dafa4798744e72abbaaff8236154122c3f4b055f27a14fb0004dd17e",
+      "status": "added"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "81a8447fe6ddb4d4ceae50b3615897117c47bce3813169a9e5d763a34da1aa8c",
+      "status": "modified"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "status": "added"
+    },
+    {
+      "path": "README.md",
+      "sha256": "635ef170077c4a2c4667604e83322b931c1a86681143d511c1c25178c7b9e7c0",
+      "status": "added"
+    },
+    {
+      "path": "app/build.gradle",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "sha256": "11fcd77bf47b9c84a7a1d2af886b561e27cd924bfb484ab2b80ff481cad4e110",
+      "status": "added"
+    },
+    {
+      "path": "app/proguard-rules.pro",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/androidTest/java/com/example/ytx_gao/marqueeapplication/ExampleInstrumentedTest.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "e9584042d25d0933ff82aebb97123ed05f490f323380285464efb7a29f856ef1",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/java/com/example/ytx_gao/marqueeapplication/MainActivity.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/java/com/example/ytx_gao/marqueeapplication/MeterViewTestActivity.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/java/com/example/ytx_gao/marqueeapplication/widget/HJJTZXIndicatorView.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/kotlin/io/github/stormblue/ringprogress/sample/MainActivity.kt",
+      "sha256": "f7377467afcb9b802be5ecc0d4da52cea32ac36bf32f284edbc06de7cbe7152e",
+      "status": "added"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_launcher.xml",
+      "sha256": "7c548dbaf2b612e1b1c199439209a493b3686f42b5f77419ae11c0f9f383bac1",
+      "status": "added"
+    },
+    {
+      "path": "app/src/main/res/drawable/marquee_bg.jpg",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main.xml",
+      "sha256": "024bc709f18045a8b21a643da9f888e496426478a7bb77d282efe666d7c7e704",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_meter_view_test.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/layout/layout_hjjtzx_indicator.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/menu/menu_main.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/values/colors.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/values/dimens.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "sha256": "6abe33574694a6ce402fde29da422081cbb8e9911582bf6ef18820aa7b79f1df",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "sha256": "67a83576294cac8b743c574716af3f6246ed2797cd67df278756bd2958c43ddb",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/xml/data_extraction_rules.xml",
+      "sha256": "ec0f1c6431c2434ac85c7933dd0fe21c430e9601ec4db70d0112557cbebf9993",
+      "status": "added"
+    },
+    {
+      "path": "app/src/test/java/com/example/ytx_gao/marqueeapplication/ExampleUnitTest.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "build.gradle",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "build.gradle.kts",
+      "sha256": "d78f809ec1688eaaa85443559dd11c291b7ad2191182ef7aa7f45158953a569e",
+      "status": "added"
+    },
+    {
+      "path": "docs/sample.png",
+      "sha256": "d7909afaa3cce43c52ddb0ccc1899630e03d348e813d5978d266bc46354d67ca",
+      "status": "added"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha256": "7800e00fe9292e7c3922448c66dc4b770c192447eed8b2424ad8b6a6768feef5",
+      "status": "added"
+    },
+    {
+      "path": "gradle.properties",
+      "sha256": "fe6633153967356f28595bf1684b1095292ccf7169ad5d588dcfc2e5f8ebd629",
+      "status": "modified"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "621008afc4f5d59357fcf06ffa644dd5aade5e091bdc363742710445f73cdaf8",
+      "status": "modified"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "adf232c9285776c3f1c647fb178f0ad0ded13e3b2485341982de110708c36e70",
+      "status": "modified"
+    },
+    {
+      "path": "gradlew",
+      "sha256": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59",
+      "status": "modified"
+    },
+    {
+      "path": "gradlew.bat",
+      "sha256": "f17917f8dbe61182b149273ee78090fec1197442c3f38276af907bfa5190db16",
+      "status": "modified"
+    },
+    {
+      "path": "marqueeview/.gitignore",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/build.gradle",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/proguard-rules.pro",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/androidTest/java/com/example/ytx_gao/marqueeview/ExampleInstrumentedTest.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/AndroidManifest.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/HJJTZXMeterView.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/MarqueeView.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/ShimmerFrameLayout.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/ShimmerMarqueeView.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/java/com/example/ytx_gao/marqueeview/ShimmerMarqueeView_bak.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/anim/in_from_down.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/anim/out_from_up.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/bg_hjjt_hot_cold.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/bg_hjjt_strong_weak.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_pointer.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_strong_long.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_strong_short.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_weak_long.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_hjjt_weak_short.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_long_arrows_down.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_long_arrows_up.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_short_arrows_down.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xhdpi/ic_short_arrows_up.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/drawable-xxhdpi/ic_hjjt_pointer.png",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/values/attrs.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/values/colors.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/main/res/values/strings.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "marqueeview/src/test/java/com/example/ytx_gao/marqueeview/ExampleUnitTest.java",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/.gitignore",
+      "sha256": "5b46eb48d96e8571e8c93e4ef4f6ffbe6807b6d7350664a36a064e1167a32718",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/build.gradle.kts",
+      "sha256": "d9aebaff4109de47b66497c14073c11368d3ca10383d18119dbfc15c4a9c4ff0",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/src/androidTest/kotlin/io/github/stormblue/ringprogress/RingProgressViewTest.kt",
+      "sha256": "7762ff98e6c513f23d5e5d8544bbf854194afa483d01a43892e741e812f3fd27",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/src/debug/AndroidManifest.xml",
+      "sha256": "668fdf14f936a9aeebede86cbd5a4f7a179a1eb282c62c679688a5a263dfbdab",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/src/debug/kotlin/io/github/stormblue/ringprogress/TestActivity.kt",
+      "sha256": "419de1327d58acfedbfbbcbbb8a2ca6677c093aed06cd2b70d6644daaddb2707",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/src/main/AndroidManifest.xml",
+      "sha256": "571f2735faf5e857752ee057ac8ef63425576a721616c60b86ee5d4c0a2d682f",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/src/main/kotlin/io/github/stormblue/ringprogress/RingProgressView.kt",
+      "sha256": "d7c8f2b0d7b9f884e4d354f1c5e060562f7c60d3b004a920f2245c20de8a2ed9",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/src/main/res/values/attrs.xml",
+      "sha256": "55427877357fbebb3a4b6f207296b58dfb1160901b27e0925f1745c45ddd9da4",
+      "status": "added"
+    },
+    {
+      "path": "settings.gradle",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "sha256": "5d0b0221fcaf657fac2473c1304e426a65dade69800b5c83e11059d3380bc17a",
+      "status": "added"
+    }
+  ],
+  "kind": "dev-spec-flow-revision-capture",
+  "schema_version": 1,
+  "scope": [
+    ".github/**",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "app/**",
+    "build.gradle",
+    "build.gradle.kts",
+    "docs/**",
+    "gradle.properties",
+    "gradle/**",
+    "gradlew",
+    "gradlew.bat",
+    "marqueeview/**",
+    "ringprogress/**",
+    "settings.gradle",
+    "settings.gradle.kts"
+  ],
+  "worktree_state": "scoped-dirty"
+}
