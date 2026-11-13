@@ -12,6 +12,6 @@
 
 性能采样使用 debug 示例、1080×2400 API 37 AVD、SwiftShader 软件 GPU：`adb shell dumpsys gfxinfo io.github.stormblue.ringprogress.sample`。加载动画运行期间记录 1079 帧，平台 Janky frames 9（0.83%），全帧 P50 26ms、P95 32ms；旧口径 legacy jank 为 92.68%。保留两个口径，不能据此声称真机稳定 60fps。关闭加载并等待按钮水波结束后，重置统计、观察 3 秒：0 渲染帧，验证静止状态不持续刷新。
 
-没有可比较的旧版基准；没有真机、API 23 运行或 TalkBack 人工朗读验证。API 23 兼容性经过 lint 和 API 守卫检查，设备覆盖范围为 API 30 / 37。GitHub Actions 配置完成，尚未取得远程 CI 运行结果。Maven Central 尚未发布。
+尚未进行真机、API 23 运行或 TalkBack 人工朗读验证。API 23 兼容性经过 lint 和 API 守卫检查，设备覆盖范围为 API 30 / 37。GitHub Actions 配置完成，尚未取得远程 CI 运行结果。Maven Central 尚未发布。
 
-本记录对应本次重构；详细构建、设备与采样证据保存在 [OpenSpec 变更归档](../openspec/changes/archive/)。
+本记录对应当前组件实现；详细构建、设备与采样证据保存在 [OpenSpec 变更归档](../openspec/changes/archive/)。

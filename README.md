@@ -90,11 +90,13 @@ AndroidView(
 
 ## 性能取舍
 
-保留硬件加速 Canvas View。换成 Compose 不会自动改善简单圆弧的性能；核心绘制只需一次轨道椭圆和一次进度圆弧，`Paint` / `RectF` 复用，`onDraw` 内无显式对象分配、无 Bitmap、无遮罩和离屏画布。进度变化不触发布局，静止时不主动刷新；动画使用平台帧时钟，隐藏和 detach 后取消。
+组件使用硬件加速 Canvas View，核心绘制只需一次轨道椭圆和一次进度圆弧，`Paint` / `RectF` 复用，`onDraw` 内无显式对象分配、无 Bitmap、无遮罩和离屏画布。进度变化不触发布局，静止时不主动刷新；动画使用平台帧时钟，隐藏和 detach 后取消。
 
-这是针对旧实现的结构优化，**没有可比较的旧版本跑分，不声称提升百分比**。实际表现取决于设备、屏幕刷新率和调用方式。参见 [验证记录](docs/verification.md) 与 [Google 自定义 View 优化建议](https://developer.android.com/develop/ui/views/layout/custom-views/optimizing-view)。
+实际表现取决于设备、屏幕刷新率和调用方式。参见 [验证记录](docs/verification.md) 与 [Google 自定义 View 优化建议](https://developer.android.com/develop/ui/views/layout/custom-views/optimizing-view)。
 
 ## 构建与示例
+
+`main` 是默认分支，包含当前组件库、示例和文档。
 
 依赖版本于 2026-11-14 核对官方发布源：AGP 9.5.1、Gradle 9.9.1、Kotlin 2.4.21；compile/target SDK 37。AGP 内置 Kotlin，根构建脚本将编译器更新至稳定版，无需额外 Android Kotlin 插件。
 
@@ -108,10 +110,6 @@ AndroidView(
 ```
 
 示例包含可拖动的确定进度、动画到 75%、重置、加载开关、逆时针平角样式；支持系统栏 Insets、旋转恢复。库测试覆盖参数边界、像素绘制、测量、保存恢复、无障碍和动画可见性生命周期。
-
-## 从旧项目迁移
-
-2.0 是一次不兼容整理：模块 `marqueeview` 改为 `ringprogress`，包名改为 `io.github.stormblue.ringprogress`。原仓库混合了 `MarqueeView`、`ShimmerMarqueeView`、`ShimmerFrameLayout`、`HJJTZXMeterView` 等跑马灯 / 闪光 / 位图仪表盘实验；它们与本次圆环 API 不同，已移除，不提供同名兼容壳。旧代码和资源仍可从 Git 历史取回。新项目只维护一个圆环组件和一个示例 App。
 
 ## 许可证
 

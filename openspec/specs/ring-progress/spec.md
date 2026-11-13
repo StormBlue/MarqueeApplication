@@ -14,7 +14,7 @@ The library SHALL expose one Kotlin View with XML and Java-compatible properties
 - **THEN** the centered ring adapts without allocating bitmaps.
 
 ### Requirement `BR-ring-progress-002`: Lifecycle and integration
-The View SHALL reuse drawing objects, invalidate only for changes/active animation, cancel animation while detached or not visible, restore target/style by stable view ID, and expose progress accessibility semantics. One sample and README SHALL demonstrate use and explain the breaking legacy migration. Published release AAR SHALL exclude the debug test host.
+The View SHALL reuse drawing objects, invalidate only for changes/active animation, cancel animation while detached or not visible, restore target/style by stable view ID, and expose progress accessibility semantics. One sample and README SHALL document the current API, integration, build and validation commands. Published release AAR SHALL exclude the debug test host.
 
 #### Scenario `SC-ring-progress-002`: Animation cleanup and restoration
 - **WHEN** an animated target changes
