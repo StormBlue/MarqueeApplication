@@ -2,7 +2,9 @@
 
 轻量的 Android 分段灯带跑马灯组件：逐段点亮、逐灯亮度和循环扫光。Kotlin 原生 View，支持 XML、Java、Kotlin 与 Compose `AndroidView`，最低 Android 6.0（API 23）。
 
-<img src="docs/sample.png" alt="跑马灯示例" width="360" />
+<img src="docs/demo.gif" alt="跑马灯动画演示：逐段点亮、斜向渐变、循环扫光和亮度调节" width="360" />
+
+演示包含逐段点亮、斜向渐变、扫光、停止 / 恢复和亮度调节。[查看静态截图](docs/sample.png)。
 
 ## 特性
 
