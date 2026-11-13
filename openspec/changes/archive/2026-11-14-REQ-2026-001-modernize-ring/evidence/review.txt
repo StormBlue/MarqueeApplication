@@ -1,0 +1,5 @@
+Independent read-only review covered Kotlin View/sample: API23 guards, rendering, animation cleanup, state and accessibility.
+P2: max changes missing accessibility content update when progress unchanged: fixed by notifying in max setter.
+P3: sample static 75%% string displays doubled percent: fixed to 75%.
+Device regression: node className unset when detached: explicitly set ProgressBar className; 12 device tests now pass.
+No unresolved findings. Release AAR inspected: no debug host. Draw path inspection: two primitives, reusable Paint/RectF, no explicit per-frame allocations or bitmap/offscreen pipeline.

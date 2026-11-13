@@ -1,0 +1,5 @@
+API 37 sample installed and cold-launched successfully.
+Tapped Animate to 75%; UI hierarchy reports Progress: 75%.
+Rotated device to landscape; Activity recreation retained Progress: 75%.
+Toggled loading off; after button ripple settled, gfxinfo reset plus 3-second observation recorded 0 rendered frames.
+Screenshot docs/sample.png visually inspected: controls visible, no clipping, system bars respected.

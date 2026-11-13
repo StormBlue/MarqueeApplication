@@ -1,77 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
-    android:fitsSystemWindows="true"
-    tools:context="com.example.ytx_gao.marqueeapplication.MainActivity">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_actions">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="TEST" />
-    </FrameLayout>
-
-    <com.example.ytx_gao.marqueeapplication.widget.HJJTZXIndicatorView
-        android:id="@+id/hjjtzx_indicator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_actions" />
-
-    <RelativeLayout
-        android:id="@+id/bottom_actions"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_alignParentBottom="true">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_media_pause" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/shimmerly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_media_ff" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@android:drawable/ic_media_play" />
-    </RelativeLayout>
-
-</RelativeLayout>
+    android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center_horizontal" android:padding="24dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/title" android:textSize="32sp" android:textStyle="bold" android:textColor="#123D37" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subtitle" android:textSize="16sp" android:layout_marginBottom="24dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/determinate" android:textSize="18sp" />
+        <io.github.stormblue.ringprogress.RingProgressView
+            android:id="@+id/progress" android:layout_width="176dp" android:layout_height="176dp"
+            android:layout_margin="16dp" android:contentDescription="@string/accessible_progress"
+            app:ringProgress="35" app:ringStrokeWidth="12dp" app:ringAnimationDuration="700" />
+        <TextView android:id="@+id/value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#123D37" />
+        <SeekBar android:id="@+id/slider" android:layout_width="match_parent" android:layout_height="48dp" android:max="100" android:progress="35" android:contentDescription="@string/accessible_progress" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal" android:baselineAligned="false">
+            <Button style="?android:attr/buttonBarButtonStyle" android:id="@+id/animate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/animate" />
+            <Button style="?android:attr/buttonBarButtonStyle" android:id="@+id/reset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false" android:gravity="center" android:layout_marginTop="24dp">
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                <io.github.stormblue.ringprogress.RingProgressView android:id="@+id/loading" android:layout_width="88dp" android:layout_height="88dp" android:contentDescription="@string/accessible_loading" app:ringIndeterminate="true" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/loading" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                <io.github.stormblue.ringprogress.RingProgressView android:layout_width="88dp" android:layout_height="88dp" android:contentDescription="@string/accessible_reverse" app:ringProgress="65" app:ringClockwise="false" app:ringRoundedCaps="false" app:ringProgressColor="#6555B3" app:ringTrackColor="#E3DFF2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center" android:text="@string/direction" />
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:id="@+id/toggle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/toggle" />
+    </LinearLayout>
+</ScrollView>

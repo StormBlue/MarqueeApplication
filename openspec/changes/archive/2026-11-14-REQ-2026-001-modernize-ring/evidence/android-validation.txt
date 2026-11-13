@@ -1,0 +1,255 @@
+Reusing configuration cache.
+> Task :app:preBuild UP-TO-DATE
+> Task :ringprogress:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :ringprogress:generateReleaseAssets UP-TO-DATE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :ringprogress:generateDebugAssets UP-TO-DATE
+> Task :ringprogress:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :ringprogress:prepareLintJarForPublish UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :ringprogress:generatePomFileForReleasePublication UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :ringprogress:preDebugBuild UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :ringprogress:processDebugNavigationResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :ringprogress:generateDebugResources UP-TO-DATE
+> Task :ringprogress:extractDeepLinksDebug UP-TO-DATE
+> Task :ringprogress:javaPreCompileDebug UP-TO-DATE
+> Task :ringprogress:mapDebugSourceSetPaths UP-TO-DATE
+> Task :ringprogress:mergeDebugAssets UP-TO-DATE
+> Task :ringprogress:processDebugManifest UP-TO-DATE
+> Task :ringprogress:writeDebugAarMetadata UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :ringprogress:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :ringprogress:preReleaseBuild UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :ringprogress:mergeDebugNativeLibs NO-SOURCE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :ringprogress:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :ringprogress:generateReleaseResources UP-TO-DATE
+> Task :ringprogress:packageDebugResources UP-TO-DATE
+> Task :ringprogress:processReleaseNavigationResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :ringprogress:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :ringprogress:javaPreCompileRelease UP-TO-DATE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :ringprogress:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :ringprogress:compileDebugLibraryResources UP-TO-DATE
+> Task :ringprogress:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :app:processReleaseNavigationResources UP-TO-DATE
+> Task :ringprogress:packageReleaseResources UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :ringprogress:parseDebugLocalResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :ringprogress:parseReleaseLocalResources UP-TO-DATE
+> Task :ringprogress:prepareReleaseArtProfile UP-TO-DATE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :ringprogress:writeReleaseAarMetadata UP-TO-DATE
+> Task :ringprogress:generateDebugRFile UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :app:compileReleaseNavigationResources UP-TO-DATE
+> Task :ringprogress:generateReleaseRFile UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :ringprogress:extractDeepLinksRelease UP-TO-DATE
+> Task :ringprogress:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:generateReleaseRFile UP-TO-DATE
+> Task :ringprogress:mergeReleaseAssets UP-TO-DATE
+> Task :app:extractReleaseVersionControlInfo UP-TO-DATE
+> Task :ringprogress:extractProguardFiles UP-TO-DATE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :ringprogress:processReleaseManifest UP-TO-DATE
+> Task :ringprogress:checkReleaseAarMetadata UP-TO-DATE
+> Task :ringprogress:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :ringprogress:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :ringprogress:compileReleaseLibraryResources UP-TO-DATE
+> Task :ringprogress:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:mergeReleaseAssets UP-TO-DATE
+> Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :app:collectReleaseDependencies UP-TO-DATE
+> Task :ringprogress:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+> Task :app:compressReleaseAssets UP-TO-DATE
+> Task :ringprogress:checkDebugAarMetadata UP-TO-DATE
+> Task :ringprogress:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :ringprogress:prepareDebugArtProfile UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :ringprogress:preDebugAndroidTestBuild UP-TO-DATE
+> Task :ringprogress:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:sdkReleaseDependencyData UP-TO-DATE
+> Task :app:processDebugMainManifest
+> Task :ringprogress:writeDebugLintModelMetadata UP-TO-DATE
+> Task :ringprogress:extractReleaseAnnotations
+> Task :ringprogress:generateDebugAndroidTestResources UP-TO-DATE
+> Task :ringprogress:mergeReleaseResources UP-TO-DATE
+> Task :ringprogress:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :ringprogress:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :app:processDebugManifest
+> Task :ringprogress:generateDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :ringprogress:sourceReleaseJar
+> Task :app:processReleaseMainManifest
+> Task :ringprogress:packageDebugAndroidTestResources UP-TO-DATE
+> Task :ringprogress:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :ringprogress:extractDebugAnnotations
+> Task :ringprogress:parseDebugAndroidTestLocalResources UP-TO-DATE
+> Task :ringprogress:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :ringprogress:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :ringprogress:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:processReleaseManifest
+> Task :ringprogress:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :ringprogress:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :ringprogress:generateDebugAndroidTestRFile UP-TO-DATE
+> Task :app:processDebugManifestForPackage
+> Task :ringprogress:compileDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :ringprogress:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :ringprogress:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :ringprogress:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :ringprogress:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :ringprogress:mergeDebugAndroidTestManifest UP-TO-DATE
+> Task :ringprogress:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :ringprogress:verifyReleaseResources UP-TO-DATE
+> Task :ringprogress:processDebugAndroidTestManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage
+> Task :ringprogress:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :ringprogress:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :ringprogress:processDebugAndroidTestResources UP-TO-DATE
+> Task :app:processDebugResources
+> Task :app:processReleaseResources
+
+> Task :ringprogress:compileReleaseKotlin
+w: file:///Volumes/Gao_2T/Projects/AndroidProjects/MarqueeApplication/ringprogress/src/main/kotlin/io/github/stormblue/ringprogress/RingProgressView.kt:209:62 'static fun obtain(p0: Int, p1: Float, p2: Float, p3: Float): AccessibilityNodeInfo.RangeInfo!' is deprecated. Deprecated in Java.
+
+> Task :ringprogress:compileReleaseJavaWithJavac NO-SOURCE
+
+> Task :ringprogress:compileDebugKotlin
+w: file:///Volumes/Gao_2T/Projects/AndroidProjects/MarqueeApplication/ringprogress/src/main/kotlin/io/github/stormblue/ringprogress/RingProgressView.kt:209:62 'static fun obtain(p0: Int, p1: Float, p2: Float, p3: Float): AccessibilityNodeInfo.RangeInfo!' is deprecated. Deprecated in Java.
+
+> Task :ringprogress:compressReleaseJavaRes UP-TO-DATE
+> Task :ringprogress:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :ringprogress:compileDebugJavaWithJavac NO-SOURCE
+> Task :ringprogress:compressDebugJavaRes UP-TO-DATE
+> Task :ringprogress:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :ringprogress:mergeDebugJavaResource UP-TO-DATE
+> Task :ringprogress:mergeReleaseJavaResource UP-TO-DATE
+> Task :ringprogress:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :ringprogress:bundleLibRuntimeToJarRelease
+> Task :ringprogress:bundleLibCompileToJarRelease
+> Task :ringprogress:createFullJarRelease
+> Task :ringprogress:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :ringprogress:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :ringprogress:syncReleaseLibJars
+> Task :ringprogress:generateReleaseLintModel
+> Task :ringprogress:generateReleaseLintVitalModel
+> Task :ringprogress:bundleLibRuntimeToJarDebug
+> Task :ringprogress:syncDebugLibJars
+> Task :ringprogress:bundleLibCompileToJarDebug
+> Task :ringprogress:generateDebugLintModel
+> Task :ringprogress:bundleReleaseAar
+> Task :ringprogress:assembleRelease
+> Task :ringprogress:bundleReleaseLocalLintAar
+> Task :ringprogress:createFullJarDebug
+> Task :ringprogress:bundleDebugLocalLintAar
+> Task :ringprogress:generateMetadataFileForReleasePublication
+> Task :ringprogress:generateDebugLintReportModel
+> Task :app:compileReleaseKotlin UP-TO-DATE
+> Task :app:compileReleaseJavaWithJavac NO-SOURCE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:expandReleaseArtProfileWildcards
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:compressDebugJavaRes UP-TO-DATE
+> Task :app:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:compressReleaseJavaRes UP-TO-DATE
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:generateDebugAndroidTestLintModel
+> Task :ringprogress:compileDebugAndroidTestKotlin UP-TO-DATE
+> Task :ringprogress:publishReleasePublicationToMavenLocal
+> Task :ringprogress:publishToMavenLocal
+> Task :ringprogress:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :ringprogress:compressDebugAndroidTestJavaRes UP-TO-DATE
+> Task :ringprogress:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :ringprogress:generateDebugAndroidTestLintModel
+> Task :ringprogress:generateDebugUnitTestLintModel
+> Task :app:dexBuilderDebug
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :ringprogress:dexBuilderDebugAndroidTest
+> Task :ringprogress:mergeProjectDexDebugAndroidTest UP-TO-DATE
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:mergeLibDexDebug
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :ringprogress:mergeLibDexDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :ringprogress:packageDebugAndroidTest
+> Task :ringprogress:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:minifyReleaseWithR8
+> Task :app:compileReleaseArtProfile
+> Task :app:convertShrunkResourcesToBinaryRelease
+> Task :app:optimizeReleaseResources
+> Task :ringprogress:lintVitalAnalyzeRelease
+> Task :ringprogress:lintAnalyzeDebugAndroidTest
+> Task :ringprogress:lintAnalyzeDebugUnitTest
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:lintVitalReportRelease SKIPPED
+> Task :app:lintVitalRelease SKIPPED
+> Task :app:packageRelease
+> Task :app:assembleRelease
+> Task :app:createReleaseApkListingFileRedirect UP-TO-DATE
+> Task :ringprogress:lintAnalyzeDebug
+> Task :ringprogress:lintReportDebug
+> Task :ringprogress:lintDebug
+> Task :ringprogress:lint
+> Task :app:lintAnalyzeDebug
+> Task :app:lintReportDebug
+> Task :app:lintDebug
+> Task :app:lint
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.google.protobuf.UnsafeUtil$MemoryAccessor (file:/Volumes/Gao_2T/.dev/java/gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.25.5/5ae5c9ec39930ae9b5a61b32b93288818ec05ec1/protobuf-java-3.25.5.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.protobuf.UnsafeUtil$MemoryAccessor
+WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+
+> Task :ringprogress:connectedDebugAndroidTest
+Running tests on devices: CircularRing_API30(AVD) - 11, RingProgress_API37(AVD) - 17
+
+[Incubating] Problems report is available at: file:///Volumes/Gao_2T/Projects/AndroidProjects/MarqueeApplication/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 9s
+196 actionable tasks: 61 executed, 135 up-to-date
+Configuration cache entry reused.

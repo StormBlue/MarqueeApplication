@@ -1,0 +1,15 @@
+name: Android
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-java@v6.2.0
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Build, lint and verify publication
+        run: ./gradlew :app:assembleDebug :app:assembleRelease :ringprogress:assembleRelease :ringprogress:assembleDebugAndroidTest lint :ringprogress:publishToMavenLocal

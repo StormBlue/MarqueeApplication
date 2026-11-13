@@ -1,4 +1,14 @@
 <resources>
-    <string name="app_name">MarqueeApplication</string>
-    <string name="action_settings">Settings</string>
+    <string name="title">RingProgress</string>
+    <string name="subtitle">A small ring. A clear signal.</string>
+    <string name="determinate">Determinate</string>
+    <string name="loading">Loading</string>
+    <string name="direction">Counterclockwise · square caps</string>
+    <string name="animate">Animate to 75%</string>
+    <string name="reset">Reset</string>
+    <string name="toggle">Toggle loading</string>
+    <string name="progress_label">Progress: %1$d%%</string>
+    <string name="accessible_progress">Download progress</string>
+    <string name="accessible_loading">Loading preview</string>
+    <string name="accessible_reverse">Reverse progress preview</string>
 </resources>
