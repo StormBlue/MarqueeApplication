@@ -2,30 +2,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="vertical" android:gravity="center_horizontal" android:padding="24dp">
+        android:orientation="vertical" android:padding="24dp">
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/title" android:textSize="32sp" android:textStyle="bold" android:textColor="#123D37" />
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subtitle" android:textSize="16sp" android:layout_marginBottom="24dp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/determinate" android:textSize="18sp" />
-        <io.github.stormblue.ringprogress.RingProgressView
-            android:id="@+id/progress" android:layout_width="176dp" android:layout_height="176dp"
-            android:layout_margin="16dp" android:contentDescription="@string/accessible_progress"
-            app:ringProgress="35" app:ringStrokeWidth="12dp" app:ringAnimationDuration="700" />
-        <TextView android:id="@+id/value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#123D37" />
-        <SeekBar android:id="@+id/slider" android:layout_width="match_parent" android:layout_height="48dp" android:max="100" android:progress="35" android:contentDescription="@string/accessible_progress" />
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal" android:baselineAligned="false">
-            <Button style="?android:attr/buttonBarButtonStyle" android:id="@+id/animate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/animate" />
-            <Button style="?android:attr/buttonBarButtonStyle" android:id="@+id/reset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/subtitle" android:textSize="15sp" android:layout_marginTop="8dp" android:layout_marginBottom="32dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/interactive" android:textSize="22sp" android:textColor="#123D37" android:textStyle="bold" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/interactive_hint" android:textSize="16sp" android:layout_marginTop="8dp" />
+        <io.github.stormblue.marqueeview.MarqueeView
+            android:id="@+id/marquee" android:layout_width="match_parent" android:layout_height="28dp"
+            android:layout_marginTop="24dp" android:layout_marginBottom="24dp"
+            android:contentDescription="@string/main_description" app:marqueeProgress="0.65"
+            app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#4DE7C8" app:marqueeGradientEndColor="#00897B" app:marqueeGradientAngle="45" app:marqueeLightColor="#00897B" app:marqueeTrackColor="#D5E7E3" app:marqueeAutoStart="true" />
+        <TextView android:id="@+id/value" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="18sp" android:textColor="#123D37" />
+        <SeekBar android:id="@+id/slider" android:layout_width="match_parent" android:layout_height="48dp" android:max="100" android:progress="65" android:contentDescription="@string/level_control" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false" style="?android:attr/buttonBarStyle">
+            <Button android:id="@+id/reveal" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/reveal" />
+            <Button android:id="@+id/start" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/start" />
+            <Button android:id="@+id/stop" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/stop" />
+            <Button android:id="@+id/clear" style="?android:attr/buttonBarButtonStyle" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="@string/clear" />
         </LinearLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:baselineAligned="false" android:gravity="center" android:layout_marginTop="24dp">
-            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
-                <io.github.stormblue.ringprogress.RingProgressView android:id="@+id/loading" android:layout_width="88dp" android:layout_height="88dp" android:contentDescription="@string/accessible_loading" app:ringIndeterminate="true" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/loading" />
-            </LinearLayout>
-            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
-                <io.github.stormblue.ringprogress.RingProgressView android:layout_width="88dp" android:layout_height="88dp" android:contentDescription="@string/accessible_reverse" app:ringProgress="65" app:ringClockwise="false" app:ringRoundedCaps="false" app:ringProgressColor="#6555B3" app:ringTrackColor="#E3DFF2" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center" android:text="@string/direction" />
-            </LinearLayout>
-        </LinearLayout>
-        <Button android:id="@+id/toggle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/toggle" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/gradient" android:textSize="22sp" android:textStyle="bold" android:textColor="#123D37" android:layout_marginTop="40dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/gradient_hint" android:textSize="16sp" android:layout_marginTop="8dp" />
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/gradient" android:layout_width="match_parent" android:layout_height="20dp" android:layout_marginTop="24dp" android:contentDescription="@string/gradient_description" app:marqueeGradientEnabled="true" app:marqueeGradientStartColor="#9D87F2" app:marqueeGradientEndColor="#4B389A" app:marqueeGradientAngle="135" app:marqueeLightColor="#6555B3" app:marqueeTrackColor="#E3DFF2" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/reverse" android:textSize="22sp" android:textStyle="bold" android:textColor="#123D37" android:layout_marginTop="40dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/reverse_hint" android:textSize="16sp" android:layout_marginTop="8dp" />
+        <io.github.stormblue.marqueeview.MarqueeView android:id="@+id/reverse" android:layout_width="match_parent" android:layout_height="20dp" android:layout_marginTop="24dp" android:contentDescription="@string/reverse_description" app:marqueeSegmentCount="24" app:marqueeCornerRadius="0dp" app:marqueeProgress="0.8" app:marqueeReverseDirection="true" app:marqueeLightColor="#B56918" app:marqueeTrackColor="#F0E3D2" app:marqueeAutoStart="true" />
     </LinearLayout>
 </ScrollView>

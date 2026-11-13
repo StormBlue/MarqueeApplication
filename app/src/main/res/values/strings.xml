@@ -1,14 +1,19 @@
 <resources>
-    <string name="title">RingProgress</string>
-    <string name="subtitle">A small ring. A clear signal.</string>
-    <string name="determinate">Determinate</string>
-    <string name="loading">Loading</string>
-    <string name="direction">Counterclockwise · square caps</string>
-    <string name="animate">Animate to 75%</string>
-    <string name="reset">Reset</string>
-    <string name="toggle">Toggle loading</string>
-    <string name="progress_label">Progress: %1$d%%</string>
-    <string name="accessible_progress">Download progress</string>
-    <string name="accessible_loading">Loading preview</string>
-    <string name="accessible_reverse">Reverse progress preview</string>
+    <string name="title">Marquee Lights</string>
+    <string name="subtitle">Segmented lights · sequential reveal · shimmer</string>
+    <string name="interactive">Make it move</string>
+    <string name="interactive_hint">Adjust the level, reveal each light, then sweep a highlight across the strip.</string>
+    <string name="reveal">Reveal</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="clear">Clear</string>
+    <string name="level">Level: %1$d%%</string>
+    <string name="gradient">Diagonal gradients</string>
+    <string name="gradient_hint">16 lights, each with its own gradient and brightness.</string>
+    <string name="reverse">Reverse direction</string>
+    <string name="reverse_hint">Square corners · warm colors · 24 lights.</string>
+    <string name="main_description">Interactive light strip</string>
+    <string name="gradient_description">Fading light strip</string>
+    <string name="reverse_description">Reverse light strip</string>
+    <string name="level_control">Light level</string>
 </resources>

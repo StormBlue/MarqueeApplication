@@ -1,0 +1,298 @@
+Reusing configuration cache.
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :marqueeview:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :marqueeview:preBuild UP-TO-DATE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :marqueeview:generateDebugAssets UP-TO-DATE
+> Task :marqueeview:generateReleaseAssets UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :marqueeview:preReleaseBuild UP-TO-DATE
+> Task :marqueeview:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :marqueeview:prepareLintJarForPublish UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :marqueeview:generatePomFileForReleasePublication UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :marqueeview:generateDebugResources UP-TO-DATE
+> Task :marqueeview:processDebugNavigationResources UP-TO-DATE
+> Task :marqueeview:javaPreCompileDebug UP-TO-DATE
+> Task :marqueeview:processDebugManifest UP-TO-DATE
+> Task :marqueeview:extractDeepLinksDebug UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :marqueeview:mergeDebugAssets UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :marqueeview:writeDebugAarMetadata UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :marqueeview:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :marqueeview:mergeDebugJniLibFolders UP-TO-DATE
+> Task :marqueeview:packageDebugResources UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :marqueeview:mergeDebugNativeLibs NO-SOURCE
+> Task :marqueeview:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :marqueeview:compileDebugLibraryResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :marqueeview:parseDebugLocalResources UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :marqueeview:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :marqueeview:javaPreCompileRelease UP-TO-DATE
+> Task :marqueeview:processReleaseNavigationResources UP-TO-DATE
+> Task :marqueeview:generateReleaseResources UP-TO-DATE
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:processReleaseNavigationResources UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :marqueeview:generateDebugRFile UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :marqueeview:mergeReleaseNativeLibs NO-SOURCE
+> Task :marqueeview:packageReleaseResources UP-TO-DATE
+> Task :marqueeview:prepareReleaseArtProfile UP-TO-DATE
+> Task :marqueeview:writeReleaseAarMetadata UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :marqueeview:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:mergeReleaseNativeLibs NO-SOURCE
+> Task :marqueeview:parseReleaseLocalResources UP-TO-DATE
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :app:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:compileReleaseNavigationResources UP-TO-DATE
+> Task :app:extractReleaseNativeSymbolTables NO-SOURCE
+> Task :marqueeview:extractDeepLinksRelease UP-TO-DATE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :marqueeview:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :marqueeview:generateReleaseRFile UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :marqueeview:mergeReleaseAssets UP-TO-DATE
+> Task :marqueeview:compileReleaseLibraryResources UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :marqueeview:extractProguardFiles UP-TO-DATE
+> Task :app:generateReleaseRFile UP-TO-DATE
+> Task :marqueeview:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :marqueeview:processReleaseManifest UP-TO-DATE
+> Task :marqueeview:checkReleaseAarMetadata UP-TO-DATE
+> Task :marqueeview:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :app:extractReleaseVersionControlInfo UP-TO-DATE
+> Task :app:mergeReleaseAssets UP-TO-DATE
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+> Task :marqueeview:stripReleaseDebugSymbols NO-SOURCE
+> Task :app:compressReleaseAssets UP-TO-DATE
+> Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :marqueeview:copyReleaseJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :app:collectReleaseDependencies UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :marqueeview:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :marqueeview:checkDebugAarMetadata UP-TO-DATE
+> Task :marqueeview:mergeReleaseResources UP-TO-DATE
+> Task :app:sdkReleaseDependencyData UP-TO-DATE
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :marqueeview:writeDebugLintModelMetadata UP-TO-DATE
+> Task :marqueeview:preDebugAndroidTestBuild UP-TO-DATE
+> Task :marqueeview:preDebugUnitTestBuild UP-TO-DATE
+> Task :marqueeview:prepareDebugArtProfile UP-TO-DATE
+> Task :marqueeview:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :marqueeview:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :marqueeview:generateDebugAndroidTestResources UP-TO-DATE
+> Task :marqueeview:packageDebugAndroidTestResources UP-TO-DATE
+> Task :marqueeview:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :marqueeview:parseDebugAndroidTestLocalResources UP-TO-DATE
+> Task :marqueeview:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :marqueeview:generateDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :marqueeview:generateDebugAndroidTestRFile UP-TO-DATE
+> Task :marqueeview:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :marqueeview:extractReleaseAnnotations
+> Task :marqueeview:extractDebugAnnotations
+> Task :marqueeview:verifyReleaseResources UP-TO-DATE
+> Task :marqueeview:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :marqueeview:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :marqueeview:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :marqueeview:sourceReleaseJar
+> Task :marqueeview:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :marqueeview:compileDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :marqueeview:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :marqueeview:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+> Task :app:generateDebugAndroidTestResources UP-TO-DATE
+> Task :app:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :marqueeview:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :app:generateDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :app:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :marqueeview:mergeDebugAndroidTestManifest UP-TO-DATE
+> Task :app:packageDebugAndroidTestResources UP-TO-DATE
+> Task :marqueeview:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :marqueeview:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :marqueeview:processDebugAndroidTestManifest UP-TO-DATE
+> Task :app:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :app:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :app:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :app:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :app:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :app:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :app:parseDebugAndroidTestLocalResources UP-TO-DATE
+> Task :app:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :app:compileDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :app:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :app:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :app:mergeDebugAndroidTestManifest UP-TO-DATE
+> Task :app:generateDebugAndroidTestRFile UP-TO-DATE
+> Task :app:processDebugAndroidTestManifest UP-TO-DATE
+> Task :marqueeview:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :app:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :app:processDebugAndroidTestResources UP-TO-DATE
+> Task :marqueeview:processDebugAndroidTestResources UP-TO-DATE
+
+> Task :marqueeview:compileReleaseKotlin
+w: file:///Volumes/Gao_2T/Projects/AndroidProjects/MarqueeApplication/marqueeview/src/main/kotlin/io/github/stormblue/marqueeview/MarqueeView.kt:358:58 'static fun obtain(p0: Int, p1: Float, p2: Float, p3: Float): AccessibilityNodeInfo.RangeInfo!' is deprecated. Deprecated in Java.
+
+> Task :marqueeview:compressReleaseJavaRes UP-TO-DATE
+> Task :marqueeview:compileReleaseJavaWithJavac NO-SOURCE
+> Task :marqueeview:mergeReleaseJavaResource UP-TO-DATE
+> Task :marqueeview:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :marqueeview:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :marqueeview:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :marqueeview:generateReleaseLintModel
+> Task :marqueeview:generateReleaseLintVitalModel
+
+> Task :marqueeview:compileDebugKotlin
+w: file:///Volumes/Gao_2T/Projects/AndroidProjects/MarqueeApplication/marqueeview/src/main/kotlin/io/github/stormblue/marqueeview/MarqueeView.kt:358:58 'static fun obtain(p0: Int, p1: Float, p2: Float, p3: Float): AccessibilityNodeInfo.RangeInfo!' is deprecated. Deprecated in Java.
+
+> Task :marqueeview:syncReleaseLibJars
+> Task :marqueeview:compileDebugJavaWithJavac NO-SOURCE
+> Task :marqueeview:compressDebugJavaRes UP-TO-DATE
+> Task :marqueeview:bundleLibRuntimeToJarRelease
+> Task :marqueeview:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :marqueeview:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :marqueeview:bundleLibCompileToJarRelease
+> Task :marqueeview:mergeDebugJavaResource UP-TO-DATE
+> Task :marqueeview:createFullJarRelease
+> Task :marqueeview:bundleReleaseAar
+> Task :marqueeview:assembleRelease
+> Task :marqueeview:bundleReleaseLocalLintAar
+> Task :marqueeview:generateDebugLintModel
+> Task :marqueeview:bundleLibRuntimeToJarDebug
+> Task :marqueeview:generateMetadataFileForReleasePublication
+> Task :marqueeview:bundleLibCompileToJarDebug
+> Task :marqueeview:syncDebugLibJars
+> Task :marqueeview:generateDebugLintReportModel
+> Task :marqueeview:createFullJarDebug
+> Task :marqueeview:publishReleasePublicationToMavenLocal
+> Task :marqueeview:publishToMavenLocal
+> Task :marqueeview:bundleDebugLocalLintAar
+> Task :marqueeview:generateDebugUnitTestLintModel
+> Task :marqueeview:generateDebugAndroidTestLintModel
+> Task :app:compileReleaseKotlin
+> Task :app:compileDebugKotlin
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:compileReleaseJavaWithJavac NO-SOURCE
+> Task :app:compressReleaseJavaRes UP-TO-DATE
+> Task :app:compressDebugJavaRes UP-TO-DATE
+> Task :app:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+> Task :app:expandReleaseArtProfileWildcards
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:dexBuilderDebug
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :app:compileDebugAndroidTestKotlin
+> Task :app:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :app:compressDebugAndroidTestJavaRes UP-TO-DATE
+> Task :app:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :app:mergeLibDexDebug
+> Task :marqueeview:mergeLibDexDebugAndroidTest
+> Task :app:dexBuilderDebugAndroidTest
+> Task :app:mergeProjectDexDebugAndroidTest UP-TO-DATE
+> Task :app:packageDebugAndroidTest UP-TO-DATE
+> Task :app:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :marqueeview:lintAnalyzeDebugUnitTest
+> Task :marqueeview:compileDebugAndroidTestKotlin
+> Task :marqueeview:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :marqueeview:compressDebugAndroidTestJavaRes UP-TO-DATE
+> Task :marqueeview:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :marqueeview:dexBuilderDebugAndroidTest
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :marqueeview:mergeProjectDexDebugAndroidTest
+> Task :marqueeview:packageDebugAndroidTest
+> Task :marqueeview:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :app:lintAnalyzeDebugUnitTest
+> Task :app:minifyReleaseWithR8
+> Task :app:convertShrunkResourcesToBinaryRelease UP-TO-DATE
+> Task :app:optimizeReleaseResources UP-TO-DATE
+> Task :app:compileReleaseArtProfile
+> Task :marqueeview:lintVitalAnalyzeRelease
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:lintVitalReportRelease SKIPPED
+> Task :app:lintVitalRelease SKIPPED
+> Task :app:packageRelease
+> Task :app:assembleRelease
+> Task :app:createReleaseApkListingFileRedirect UP-TO-DATE
+
+> Task :app:connectedDebugAndroidTest
+Running tests on devices: Marquee_API37(AVD) - 17
+
+> Task :marqueeview:lintAnalyzeDebugAndroidTest
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.google.protobuf.UnsafeUtil$MemoryAccessor (file:/Volumes/Gao_2T/.dev/java/gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.25.5/5ae5c9ec39930ae9b5a61b32b93288818ec05ec1/protobuf-java-3.25.5.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.protobuf.UnsafeUtil$MemoryAccessor
+WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+> Task :marqueeview:lintAnalyzeDebug
+> Task :marqueeview:lintReportDebug
+> Task :marqueeview:lintDebug
+> Task :marqueeview:lint
+> Task :app:lintAnalyzeDebug
+> Task :app:lintReportDebug
+> Task :app:lintDebug
+> Task :app:lint
+
+> Task :marqueeview:connectedDebugAndroidTest
+Running tests on devices: Marquee_API37(AVD) - 17
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by com.google.protobuf.UnsafeUtil$MemoryAccessor (file:/Volumes/Gao_2T/.dev/java/gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.25.5/5ae5c9ec39930ae9b5a61b32b93288818ec05ec1/protobuf-java-3.25.5.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.protobuf.UnsafeUtil$MemoryAccessor
+WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+
+[Incubating] Problems report is available at: file:///Volumes/Gao_2T/Projects/AndroidProjects/MarqueeApplication/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 27s
+227 actionable tasks: 58 executed, 169 up-to-date
+Configuration cache entry reused.

@@ -1,0 +1,3 @@
+Installed debug sample and cold-launched io.github.stormblue.marqueeview.sample/.MainActivity on dedicated API37 AVD successfully.
+Visually inspected docs/sample.png: three segmented light strips with 45/135 degree gradients, 65% slider, Reveal/Start/Stop/Clear, fading intensities and reverse direction; no clipping; system bars respected.
+Clicked Stop using bounds from UI hierarchy, waited for ripple, reset gfxinfo, observed for 3 seconds: zero rendered frames.

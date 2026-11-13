@@ -1,0 +1,5 @@
+<io.github.stormblue.marqueeview.MarqueeView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="200dp" android:layout_height="24dp"
+    app:marqueeSegmentCount="8" app:marqueeProgress="0.5" app:marqueeSegmentSpacing="4dp"
+    app:marqueeCornerRadius="0dp" app:marqueeLightColor="#FF0000" app:marqueeAutoStart="true"
+    app:marqueeGradientEnabled="true" app:marqueeGradientAngle="135" app:marqueeReverseDirection="true" app:marqueeShimmerDuration="900" />

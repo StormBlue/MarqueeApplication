@@ -12,4 +12,4 @@ jobs:
           distribution: temurin
           java-version: '25'
       - name: Build, lint and verify publication
-        run: ./gradlew :app:assembleDebug :app:assembleRelease :ringprogress:assembleRelease :ringprogress:assembleDebugAndroidTest lint :ringprogress:publishToMavenLocal
+        run: ./gradlew :app:assembleDebug :app:assembleRelease :marqueeview:assembleRelease :marqueeview:assembleDebugAndroidTest :app:assembleDebugAndroidTest lint :marqueeview:publishToMavenLocal

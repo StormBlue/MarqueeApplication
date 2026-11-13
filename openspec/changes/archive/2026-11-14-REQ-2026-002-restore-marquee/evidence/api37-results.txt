@@ -1,0 +1,18 @@
+app/build/outputs/androidTest-results/connected/debug/TEST-Marquee_API37(AVD) - 17.xml {'tests': '1', 'failures': '0', 'errors': '0', 'skipped': '0', 'time': '0.000', 'timestamp': '2026-11-13T18:24:37', 'hostname': 'localhost'}
+PASS recreationPreservesPercentageAndStoppedState
+marqueeview/build/outputs/androidTest-results/connected/debug/TEST-Marquee_API37(AVD) - 17.xml {'tests': '15', 'failures': '0', 'errors': '0', 'skipped': '0', 'time': '0.000', 'timestamp': '2026-11-13T18:24:52', 'hostname': 'localhost'}
+PASS revealIsSequentialRetargetsAndThenStartsShimmer
+PASS animationsStopForHiddenAncestorsWindowAndDetachThenResume
+PASS progressClampsAndFillsPartialLight
+PASS xmlParametersInflateCorrectly
+PASS accessibilityReportsMeanTargetIntensity
+PASS detachingDuringRevealSettlesAtTargetOnReattachment
+PASS gradientShadersAreReusedAcrossAnimationFramesAndRebuiltForGeometry
+PASS allDarkAndDetachedViewsDoNotStartFrameLoops
+PASS invalidInputsAreRejectedWithoutChangingData
+PASS measurementRespectsConstraintsAndResize
+PASS systemDisabledAnimationsShowTargetsWithoutStartingLoop
+PASS pixelsMatchSpacingIntensitiesDirectionAndPadding
+PASS intensityArraysAreDefensivelyCopied
+PASS eachSegmentHasItsOwnDiagonalGradientAndAngle
+PASS savedStateIsSnapshotAndRestoresStyleAndPlaybackIntent

@@ -1,0 +1,7 @@
+Independent read-only review: core API, drawing, state, XML, sample, build and tests.
+P2: detach during a reveal left partially displayed values. Fixed by settling displayed to targets on detach; detachingDuringRevealSettlesAtTargetOnReattachment regression passes.
+P3: sample normalized percentage truncated on restoration (53 became 52). Fixed with roundToInt; sample Activity recreation at 53% and stopped state passes.
+Follow-up review confirms both fixes, no remaining actionable findings.
+Release AAR inspected with jar tf: MarqueeView classes and Kotlin metadata only, no TestActivity.
+Drawing inspection: flat mode one drawRoundRect per segment; gradient mode at most three; reusable Paint and arrays; no Bitmap, offscreen Canvas, per-frame shader creation or logging or explicit draw allocations; one animator slot.
+Gradient follow-up review: geometry, per-segment angles, alpha, RTL and saved state checked. Equal spacing/padding previously rebuilt all shaders; fixed cache identity guard and regression. Device XML test exposed RTL padding resolution recursion; rebuild reentrancy guard plus asymmetric relative-padding/RTL regression fixed it. Final independent review found no remaining actionable findings.

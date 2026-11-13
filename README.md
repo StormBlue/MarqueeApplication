@@ -1,116 +1,155 @@
-# RingProgress
+# MarqueeView
 
-一个轻量的 Android 圆环进度条。Kotlin 编写，原生 View，支持 XML、Java、Kotlin 和 Compose `AndroidView`。Android 6.0（API 23）及以上。
+轻量的 Android 分段灯带跑马灯组件：逐段点亮、逐灯亮度和循环扫光。Kotlin 原生 View，支持 XML、Java、Kotlin 与 Compose `AndroidView`，最低 Android 6.0（API 23）。
 
-![示例](docs/sample.png)
+<img src="docs/sample.png" alt="跑马灯示例" width="360" />
 
 ## 特性
 
-- 确定进度与不确定加载动画；顺时针 / 逆时针、圆角 / 平角、颜色与线宽。
-- `wrap_content` 默认 96dp，支持 padding、非正方形约束和尺寸变化。
-- 动画连续转向新目标；不可见、离开窗口时停止；恢复显示后重新开始加载动画。
-- 状态保存与恢复，TalkBack ProgressBar 范围语义；尊重系统关闭动画设置。
-- 不申请权限，不包含网络、图片、闪光依赖或业务逻辑。库的运行时依赖只有 Kotlin 标准库。
+- 默认 16 段灯块，可配置 1–256 段、间距、圆角与颜色。
+- 每段可使用独立重起的斜向渐变，支持起止颜色和任意角度。
+- 独立设置每一段的亮度，也可用 `progress` 顺序点亮。
+- 从当前亮度逐段过渡至新目标，完成后按需循环扫光。
+- 自动跟随 RTL；支持反向播放、padding 和动态尺寸。
+- 隐藏、进入后台或移出窗口时取消动画，恢复可见后按播放意图重启扫光。
+- 保存亮度、样式与播放意图，提供无障碍进度语义，尊重系统关闭动画设置。
+- 运行时仅依赖 Kotlin 标准库，不申请权限。
 
 ## 接入
 
-目前仓库提供源码和 Maven Local 发布，**尚未发布到 Maven Central**。
+`main` 包含组件库 `marqueeview` 和示例 `app`。
 
-直接在本项目中引用：
-
-```kotlin
-dependencies { implementation(project(":ringprogress")) }
-```
-
-或先在此仓库执行 `./gradlew :ringprogress:publishToMavenLocal`，再在消费项目加入 `mavenLocal()` 和：
+本项目中直接引用：
 
 ```kotlin
-implementation("io.github.stormblue:ringprogress:2.0.0")
+dependencies { implementation(project(":marqueeview")) }
 ```
 
-发布包含 release AAR、源码 JAR 和 Maven POM。不要向提交中添加仓库凭据；远程发布需要维护者另行配置。
+也可在此仓库执行 `./gradlew :marqueeview:publishToMavenLocal`，在消费项目的仓库配置中加入 `mavenLocal()` 后引用：
+
+```kotlin
+implementation("io.github.stormblue:marqueeview:2.0.0")
+```
+
+目前提供源码与 Maven Local 发布，尚未发布到 Maven Central。发布产物包含 release AAR、源码 JAR、POM 和 Gradle module metadata。
 
 ## XML
 
 ```xml
-<io.github.stormblue.ringprogress.RingProgressView
+<io.github.stormblue.marqueeview.MarqueeView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/progress"
-    android:layout_width="120dp"
-    android:layout_height="120dp"
-    android:contentDescription="下载进度"
-    app:ringMax="100"
-    app:ringProgress="35"
-    app:ringStrokeWidth="8dp"
-    app:ringProgressColor="#00897B" />
+    android:id="@+id/marquee"
+    android:layout_width="match_parent"
+    android:layout_height="24dp"
+    android:contentDescription="设备信号强度"
+    app:marqueeSegmentCount="16"
+    app:marqueeSegmentSpacing="3dp"
+    app:marqueeProgress="0.65"
+    app:marqueeGradientEnabled="true"
+    app:marqueeGradientStartColor="#58F7B0"
+    app:marqueeGradientEndColor="#00897B"
+    app:marqueeGradientAngle="45"
+    app:marqueeAutoStart="true" />
 ```
+
+## Kotlin / Java
+
+所有修改在主线程进行。
 
 ```kotlin
-ring.progress = 40f                     // 立即更新
-ring.setProgress(75f, animated = true)   // 默认 300ms，从当前显示位置过渡
-ring.isIndeterminate = true             // 加载状态：90° 圆弧，每 1200ms 转一圈
-ring.isIndeterminate = false            // 显示最近设置的 progress
+marquee.gradientEnabled = true
+marquee.gradientStartColor = Color.rgb(88, 247, 176)
+marquee.gradientEndColor = Color.rgb(0, 137, 123)
+marquee.gradientAngle = 45f               // 每段左上 → 右下
+marquee.progress = 0.5f                  // 前一半灯块点亮
+marquee.setProgress(0.75f, true)          // 从当前亮度逐段过渡
+marquee.start()                          // 过渡结束后循环扫光
+marquee.stop()                           // 停止动画，保留目标亮度
+
+// 每段独立亮度，顺序为逻辑起点至终点；输入会复制。
+marquee.setIntensities(
+    FloatArray(marquee.segmentCount) { 1f - it.toFloat() / marquee.segmentCount },
+    animated = true,
+)
+
+// 清空灯带
+marquee.stop()
+marquee.progress = 0f
 ```
 
-Java：`ring.setProgress(75f, true); ring.setIndeterminate(true);`
+```java
+marquee.setProgress(0.75f, true);
+marquee.setSegmentCount(4);
+marquee.setIntensities(new float[] { 1f, 0.8f, 0.4f, 0f });
+marquee.start();
+marquee.stop();
+```
 
-在主线程修改参数。加载模式下可以更新目标进度，切回确定模式时显示它。组件自身不绘制文字，可在容器中叠加 TextView。
+`start()` 记录播放意图；全暗、不可见、未挂载或系统关闭动画时不启动循环。`isStarted` 表示播放意图，`isRunning` 表示当前是否有逐段过渡或扫光动画。隐藏或移出窗口会结束未完成的亮度过渡并保留目标值，再显示时按播放意图启动扫光。`stop()` 同样显示最终目标亮度。
+
+给 View 设置稳定 `android:id` 后可自动保存与恢复状态；恢复目标值及样式，动画从新的时间线开始。组件本身不绘制文字，内容描述由调用方设置；无障碍范围值为所有灯块的平均目标亮度。
 
 ## 参数
 
 | Kotlin 属性 | XML 属性 | 默认值 / 规则 |
 | --- | --- | --- |
-| `progress` | `ringProgress` | `0f`；有限数，限制到 `[0, max]` |
-| `max` | `ringMax` | `100f`；有限且大于 0；缩小时同步限制进度 |
-| `strokeWidth` | `ringStrokeWidth` | 8dp；Kotlin/Java API 单位 **px**，有限且大于 0；绘制时限制为可用直径的一半 |
-| `progressColor` | `ringProgressColor` | `#00897B`，ARGB 颜色整数 |
-| `trackColor` | `ringTrackColor` | `#2800897B`，ARGB 颜色整数 |
-| `startAngle` | `ringStartAngle` | `-90f`，从顶部开始；0° 在右侧，正角度顺时针 |
-| `clockwise` | `ringClockwise` | `true`，不随 RTL 自动反向 |
-| `roundedCaps` | `ringRoundedCaps` | `true` |
-| `isIndeterminate` | `ringIndeterminate` | `false` |
-| `animationDuration` | `ringAnimationDuration` | `300` 毫秒，非负；0 表示立即更新，仅影响确定进度过渡 |
+| `segmentCount` | `marqueeSegmentCount` | 16；1–256，改变数量时清空亮度并取消当前动画，保留播放意图 |
+| `segmentSpacing` | `marqueeSegmentSpacing` | 3dp；非负，程序 API 单位 **px** |
+| `cornerRadius` | `marqueeCornerRadius` | 3dp；非负，程序 API 单位 **px**；0 为直角 |
+| `lightColor` | `marqueeLightColor` | `#00F5AA`，纯色模式的点亮颜色 |
+| `gradientEnabled` | `marqueeGradientEnabled` | false；启用每段独立渐变 |
+| `gradientStartColor` | `marqueeGradientStartColor` | `#58F7B0` |
+| `gradientEndColor` | `marqueeGradientEndColor` | `#52E3A3` |
+| `gradientAngle` | `marqueeGradientAngle` | 45°；0° 向右、90° 向下、135° 从右上到左下，接受有限角度并归一化 |
+| `trackColor` | `marqueeTrackColor` | `#0D432F` |
+| `shimmerColor` | `marqueeShimmerColor` | `#FFFFFF` |
+| `shimmerWidth` | `marqueeShimmerWidth` | 0.3；扫光半宽占灯带比例，范围 `(0, 1]` |
+| `shimmerDuration` | `marqueeShimmerDuration` | 1600ms；大于 0，完整扫过一次的时长 |
+| `revealDuration` | `marqueeRevealDuration` | 400ms；非负，0 表示立即更新亮度 |
+| `reverseDirection` | `marqueeReverseDirection` | false；反转逻辑方向；默认 LTR 向右、RTL 向左 |
+| `progress` | `marqueeProgress` | 0；有限数，限制到 `[0, 1]`；不足一整段时按比例设置该段亮度 |
+| — | `marqueeAutoStart` | false；初始化时调用 `start()` |
+| `intensities`（只读副本） | — | 每段亮度 `[0, 1]`，通过 `setIntensities()` 修改 |
+| `isStarted` / `isRunning`（只读） | — | 播放意图 / 当前实际动画状态 |
 
-非法参数（NaN、无穷、非正 max/线宽、负时长）抛出 `IllegalArgumentException`。`progress` 返回目标值，动画中显示值逐帧追赶目标。状态恢复需要设置稳定的 `android:id`；恢复目标和样式，动画不续播旧时间线。
+亮度数组长度必须等于 `segmentCount`，每项必须为 `[0, 1]` 的有限数。非法数量、尺寸、时长、NaN 或无穷值会抛出 `IllegalArgumentException`。
 
-## Compose 接入（可选）
+`wrap_content` 默认 240 × 12dp，再加 padding，遵循父布局的约束。灯块填满可用高度与宽度；间距会限制到可用空间，宽度不足时安全跳过绘制。RTL 需要宿主应用设置 `android:supportsRtl="true"`。
 
-组件不引入 Compose；已有 Compose 项目可使用官方互操作容器：
+## Compose（可选）
+
+已有 Compose 项目可以使用官方互操作容器，组件不强制引入 Compose：
 
 ```kotlin
 AndroidView(
-    factory = { context -> RingProgressView(context) },
-    modifier = Modifier.size(120.dp),
-    update = { view -> view.setProgress(progress, animated = true) },
+    factory = { context -> MarqueeView(context).apply { start() } },
+    modifier = Modifier.fillMaxWidth().height(24.dp),
+    update = { view -> view.progress = progress },
 )
 ```
 
-`AndroidView` 来自 `androidx.compose.ui.viewinterop`。不要在每次重组中重复启用过渡；若状态更新频繁，使用 `view.progress = progress`，让调用方控制动画。
+`AndroidView` 来自 `androidx.compose.ui.viewinterop`。需要逐段过渡时，在目标变化时调用 `setProgress(value, true)`。
 
-## 性能取舍
+## 性能
 
-组件使用硬件加速 Canvas View，核心绘制只需一次轨道椭圆和一次进度圆弧，`Paint` / `RectF` 复用，`onDraw` 内无显式对象分配、无 Bitmap、无遮罩和离屏画布。进度变化不触发布局，静止时不主动刷新；动画使用平台帧时钟，隐藏和 detach 后取消。
+灯块直接使用硬件加速 Canvas 绘制。纯色模式每段每帧一次 `drawRoundRect`；渐变模式绘制底色、渐变亮度层和按需出现的扫光层，最多三次。每个灯块的 `LinearGradient` 按自身边界创建并缓存，只在尺寸、padding 或渐变相关参数变化时重建。动画帧复用 Shader、`Paint` 与亮度缓冲区，`onDraw` 没有显式对象分配，不创建 Shader / Matrix / Bitmap，不使用离屏遮罩，不输出逐帧日志。逐段过渡和扫光共用一个动画槽，最多一个 `ValueAnimator` 运行；数据变化不触发布局。
 
-实际表现取决于设备、屏幕刷新率和调用方式。参见 [验证记录](docs/verification.md) 与 [Google 自定义 View 优化建议](https://developer.android.com/develop/ui/views/layout/custom-views/optimizing-view)。
+全暗、停止或隐藏时不维持刷新循环。段数限制为 256，避免无界绘制开销。真实表现取决于设备和调用方式，测量条件及结果见 [验证记录](docs/verification.md)。实现遵循 [Google 自定义 View 优化建议](https://developer.android.com/develop/ui/views/layout/custom-views/optimizing-view)。
 
-## 构建与示例
+## 构建与测试
 
-`main` 是默认分支，包含当前组件库、示例和文档。
-
-依赖版本于 2026-11-14 核对官方发布源：AGP 9.5.1、Gradle 9.9.1、Kotlin 2.4.21；compile/target SDK 37。AGP 内置 Kotlin，根构建脚本将编译器更新至稳定版，无需额外 Android Kotlin 插件。
-
-使用 JDK 17 或更高版本（本机验证为 JDK 25），安装 Android SDK Platform 37 与 Build Tools 36.0.0，在 `local.properties` 设置 `sdk.dir` 或导出 `ANDROID_HOME`。
+工具链：AGP 9.5.1、Gradle 9.9.1、Kotlin 2.4.21，compile/target SDK 37。AGP 内置 Kotlin，根脚本指定编译器版本；不应用额外 Android Kotlin 插件。使用 JDK 17 或更高版本（本机验证 JDK 25），安装 Android SDK Platform 37 和 Build Tools 36.0.0，设置 `local.properties` 的 `sdk.dir` 或 `ANDROID_HOME`。
 
 ```sh
-./gradlew :app:assembleDebug :app:assembleRelease :ringprogress:assembleRelease lint
+./gradlew :app:assembleDebug :app:assembleRelease :marqueeview:assembleRelease lint
 ./gradlew :app:installDebug
-./gradlew :ringprogress:connectedDebugAndroidTest
-./gradlew :ringprogress:publishToMavenLocal
+./gradlew :marqueeview:connectedDebugAndroidTest :app:connectedDebugAndroidTest --no-parallel
+./gradlew :marqueeview:publishToMavenLocal
 ```
 
-示例包含可拖动的确定进度、动画到 75%、重置、加载开关、逆时针平角样式；支持系统栏 Insets、旋转恢复。库测试覆盖参数边界、像素绘制、测量、保存恢复、无障碍和动画可见性生命周期。
+示例包含亮度滑杆、逐段点亮、开始 / 停止 / 清空、45° / 135° 逐段渐变、逐灯亮度和反向扫光。设备测试覆盖参数、每段渐变方向与颜色、动画中 Shader 缓存复用、像素绘制、RTL、测量、数组隔离、保存恢复、无障碍、XML、动画转向和生命周期。GitHub Actions 编译示例和测试 APK、运行 lint 并检查本地发布；设备测试可在连接的设备 / AVD 上运行。多项目共享模拟器时，使用 `ANDROID_SERIAL=设备序列号` 选择专用设备；测试涉及系统动画开关并会恢复其原值。
 
 ## 许可证
 
-[Apache License 2.0](LICENSE)。欢迎提交问题和小而聚焦的 PR；提交前运行构建、lint，并为公共行为的改动运行设备测试。
+[Apache License 2.0](LICENSE)。欢迎提交小而聚焦的 PR，修改公共行为时请运行设备测试。

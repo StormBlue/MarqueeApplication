@@ -1,0 +1,199 @@
+{
+  "base_commit": "6a76799f7c8758f08d1e9d271bd53b3ad2a9192d",
+  "changed_paths": [
+    ".github/workflows/android.yml",
+    "README.md",
+    "app/build.gradle.kts",
+    "app/src/androidTest/kotlin/io/github/stormblue/marqueeview/sample/SampleStateTest.kt",
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/kotlin/io/github/stormblue/marqueeview/sample/MainActivity.kt",
+    "app/src/main/kotlin/io/github/stormblue/ringprogress/sample/MainActivity.kt",
+    "app/src/main/res/drawable/ic_launcher.xml",
+    "app/src/main/res/layout/activity_main.xml",
+    "app/src/main/res/values/strings.xml",
+    "docs/sample.png",
+    "docs/verification.md",
+    "marqueeview/.gitignore",
+    "marqueeview/build.gradle.kts",
+    "marqueeview/src/androidTest/kotlin/io/github/stormblue/marqueeview/MarqueeViewTest.kt",
+    "marqueeview/src/debug/AndroidManifest.xml",
+    "marqueeview/src/debug/kotlin/io/github/stormblue/marqueeview/TestActivity.kt",
+    "marqueeview/src/debug/res/layout/test_marquee.xml",
+    "marqueeview/src/main/AndroidManifest.xml",
+    "marqueeview/src/main/kotlin/io/github/stormblue/marqueeview/MarqueeView.kt",
+    "marqueeview/src/main/res/values/attrs.xml",
+    "ringprogress/.gitignore",
+    "ringprogress/build.gradle.kts",
+    "ringprogress/src/androidTest/kotlin/io/github/stormblue/ringprogress/RingProgressViewTest.kt",
+    "ringprogress/src/debug/AndroidManifest.xml",
+    "ringprogress/src/debug/kotlin/io/github/stormblue/ringprogress/TestActivity.kt",
+    "ringprogress/src/main/AndroidManifest.xml",
+    "ringprogress/src/main/kotlin/io/github/stormblue/ringprogress/RingProgressView.kt",
+    "ringprogress/src/main/res/values/attrs.xml",
+    "settings.gradle.kts"
+  ],
+  "entries": [
+    {
+      "path": ".github/workflows/android.yml",
+      "sha256": "5bd09438ae211c451a3efc928799fb68aefcbb46bc0607895550c6fc59679208",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6c00543ba632f3de25427509db99ccb9378eb18fa7fabd02a8544397db830948",
+      "status": "modified"
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "sha256": "3b0c73f3c74fdf0d80b40f0347584d1f0f075266e9715cbf5f40123b40535e1b",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/androidTest/kotlin/io/github/stormblue/marqueeview/sample/SampleStateTest.kt",
+      "sha256": "8211aabaa40136701168db715bd4cc88e1602161ba10f7814533a5dc3e125e62",
+      "status": "added"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "37ff28af1252a550ffe1868e05316a79c0ee8f8f84e44cdc6482ad0a0c24409c",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/kotlin/io/github/stormblue/marqueeview/sample/MainActivity.kt",
+      "sha256": "95d6ace3052ad288228769725d2cedd48ac41886dc6f487f72d1c1e138dc63ab",
+      "status": "added"
+    },
+    {
+      "path": "app/src/main/kotlin/io/github/stormblue/ringprogress/sample/MainActivity.kt",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_launcher.xml",
+      "sha256": "d1c7b275dd6192ed127c730dc48b2bcf8ba0ccdca264d612d2e0424ea9aaed4e",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main.xml",
+      "sha256": "b791e9630dd6acc1f0358930ba462f2518249203d59bc16d0429e876b110ef7b",
+      "status": "modified"
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "sha256": "79d4cdd4ac031025db196a17ea1e0282535631bdf04a515b44c528da2c963134",
+      "status": "modified"
+    },
+    {
+      "path": "docs/sample.png",
+      "sha256": "66d630fa11405d1fb1a9920031473dc6005f0096e0db27be160a80ed1828f1ce",
+      "status": "modified"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha256": "a3683aec1f0977da3d0fcf8c5bbc96f51bb44b963c9a55c73fefca99371b2a7c",
+      "status": "modified"
+    },
+    {
+      "path": "marqueeview/.gitignore",
+      "sha256": "5b46eb48d96e8571e8c93e4ef4f6ffbe6807b6d7350664a36a064e1167a32718",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/build.gradle.kts",
+      "sha256": "ea07d27ca5b960d53796d1cc1b8402e76d84d7f8dc66e119d1efd5deb49ddaf8",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/androidTest/kotlin/io/github/stormblue/marqueeview/MarqueeViewTest.kt",
+      "sha256": "1d5203161512a8eb174d804d52c6fe8c45323164cbac3aa251a550fdd67f45f7",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/debug/AndroidManifest.xml",
+      "sha256": "b08dde4aca1ba2fe7dea098224f27610bc9cbcd9a24f1f209b02f525c87ae5ba",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/debug/kotlin/io/github/stormblue/marqueeview/TestActivity.kt",
+      "sha256": "a77e1e8b8f137735055eb3630b1b705679f702a26874db72def9d5e6dc1c6d88",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/debug/res/layout/test_marquee.xml",
+      "sha256": "ea253771f6af9a67e487a9f65d4ff4a0c86a004943348ba11145dd11f570aa92",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/main/AndroidManifest.xml",
+      "sha256": "571f2735faf5e857752ee057ac8ef63425576a721616c60b86ee5d4c0a2d682f",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/main/kotlin/io/github/stormblue/marqueeview/MarqueeView.kt",
+      "sha256": "a43a950a40bbeb7ebebef5e3e391457045b461bbedcce5159f39df027bd56068",
+      "status": "added"
+    },
+    {
+      "path": "marqueeview/src/main/res/values/attrs.xml",
+      "sha256": "6c649898b2b10dcff5071fec5bb95acc7ba0e3744c0124c82aa0e2326db8b2a4",
+      "status": "added"
+    },
+    {
+      "path": "ringprogress/.gitignore",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/build.gradle.kts",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/src/androidTest/kotlin/io/github/stormblue/ringprogress/RingProgressViewTest.kt",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/src/debug/AndroidManifest.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/src/debug/kotlin/io/github/stormblue/ringprogress/TestActivity.kt",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/src/main/AndroidManifest.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/src/main/kotlin/io/github/stormblue/ringprogress/RingProgressView.kt",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "ringprogress/src/main/res/values/attrs.xml",
+      "sha256": null,
+      "status": "deleted"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "sha256": "32a956be279ff13ce9b354a69f8218093da58536006f0a44bc7b877c234a79cb",
+      "status": "modified"
+    }
+  ],
+  "kind": "dev-spec-flow-revision-capture",
+  "schema_version": 1,
+  "scope": [
+    ".github/**",
+    "README.md",
+    "app/**",
+    "docs/**",
+    "marqueeview/**",
+    "ringprogress/**",
+    "settings.gradle.kts"
+  ],
+  "worktree_state": "scoped-dirty"
+}

@@ -5,5 +5,5 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories { google(); mavenCentral() }
 }
-rootProject.name = "RingProgress"
-include(":app", ":ringprogress")
+rootProject.name = "MarqueeView"
+include(":app", ":marqueeview")

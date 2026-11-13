@@ -1,0 +1,20 @@
+<resources>
+    <declare-styleable name="MarqueeView">
+        <attr name="marqueeSegmentCount" format="integer" />
+        <attr name="marqueeSegmentSpacing" format="dimension" />
+        <attr name="marqueeCornerRadius" format="dimension" />
+        <attr name="marqueeLightColor" format="color" />
+        <attr name="marqueeTrackColor" format="color" />
+        <attr name="marqueeGradientEnabled" format="boolean" />
+        <attr name="marqueeGradientStartColor" format="color" />
+        <attr name="marqueeGradientEndColor" format="color" />
+        <attr name="marqueeGradientAngle" format="float" />
+        <attr name="marqueeShimmerColor" format="color" />
+        <attr name="marqueeShimmerWidth" format="float" />
+        <attr name="marqueeShimmerDuration" format="integer" />
+        <attr name="marqueeRevealDuration" format="integer" />
+        <attr name="marqueeProgress" format="float" />
+        <attr name="marqueeReverseDirection" format="boolean" />
+        <attr name="marqueeAutoStart" format="boolean" />
+    </declare-styleable>
+</resources>

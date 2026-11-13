@@ -1,0 +1,9 @@
+# Design
+
+The actual component is a segmented marquee strip: independent brightness values, sequential reveal and an optional repeating highlight. Use one Kotlin View and one sample application. Keep the current official stable toolchain and Kotlin stdlib as the sole runtime dependency. No mandatory Compose dependency is justified for this simple drawing workload; AndroidView supports existing Compose hosts.
+
+Flat mode renders each segment once using an interpolated ARGB color and reusable Paint. Optional diagonal gradients cache one LinearGradient per physical segment on geometry/style changes; no Shader or Matrix is constructed during drawing/animation. Gradient mode draws track, cached gradient fill and optional sweep overlay (at most three rectangles). Colors and angles restart within each segment. Compute the moving highlight mathematically per segment, eliminating bitmap masks, offscreen canvases and per-frame logs. Reuse three intensity buffers and one animator slot; a finite sequential reveal completes before the optional repeating sweep. Cap segment count at 256. Hide/detach cancels and settles to targets, while playback intent survives for restart. Equality checks prevent repeated bindings from restarting a sweep.
+
+Documentation sync is scoped to README, current product specifications and docs/verification.md. README documents current behavior only, with no migration section. Prior change archives remain historical records. This repository uses standalone dev-spec-flow; no repository-wide docs-architect configuration/index tree is added to the small component project.
+
+Use dedicated AVDs and ANDROID_SERIAL: another active project was changing the shared emulator's global animation scale. The test that disables animations restores its original setting. Device-test Gradle tasks run sequentially.

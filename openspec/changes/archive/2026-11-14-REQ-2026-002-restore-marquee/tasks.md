@@ -1,0 +1,10 @@
+<!-- docs-architect-meta {"schema_version":1,"id":"PLAN-REQ-2026-002","type":"exec-plan","title":"Implement Restore and modernize segmented marquee component","status":"completed","owners":[],"sources":["openspec/changes/archive/2026-11-14-REQ-2026-002-restore-marquee/**"],"update_when":["Implementation progress, discoveries, recovery, or verification changes"],"relations":[{"type":"implements","target":"REQ-2026-002"}],"cancellations":[],"evidence":[{"kind":"log","ref":"openspec/changes/archive/2026-11-14-REQ-2026-002-restore-marquee/evidence/api37-build-test.txt","description":"API37 build, lint, publication and device tests passed."},{"kind":"log","ref":"openspec/changes/archive/2026-11-14-REQ-2026-002-restore-marquee/evidence/api30-test.txt","description":"API30 component and sample device tests passed."},{"kind":"document","ref":"openspec/changes/archive/2026-11-14-REQ-2026-002-restore-marquee/evidence/ui-smoke.txt","description":"Sample screenshot inspection and zero idle rendering observed."},{"kind":"document","ref":"openspec/changes/archive/2026-11-14-REQ-2026-002-restore-marquee/evidence/draw-summary.txt","description":"Measured sample draw-recording intervals from captured frame stats."}],"affected_docs":[],"verified_at":"2026-11-13T18:27:16.308227+00:00","verified_against":"sha256:1826b5ebba6c04ec879fee37f1b18cf84dd4ab5a837616f3ac4b832e7d2c7714@openspec/changes/archive/2026-11-14-REQ-2026-002-restore-marquee/evidence/revision.json"} -->
+
+# PLAN-REQ-2026-002: Implement segmented marquee component
+
+| ID | Priority | Status | Depends on | Implements | Task |
+|---|---:|---|---|---|---|
+| T-001 | 1 | completed | - | AC-1, BR-marquee-001, BR-marquee-002, BR-marquee-003, BR-ring-progress-001, BR-ring-progress-002 | Implement marquee, rebuild tests/sample/docs, validate and prepare Git baseline |
+
+## Outcome
+One reusable Kotlin View, one sample. 15 component tests plus 1 sample test pass per API30/API37 device (32 total); build/lint/local publication pass. All independent review findings resolved. Commit/push authorized and performed after close.

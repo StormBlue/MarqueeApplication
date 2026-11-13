@@ -1,0 +1,2 @@
+120 unflagged recent frames; sample UI draw-recording interval SyncQueued-DrawStart P50=0.050ms, P95=0.144ms, max=9.994ms.
+Sample: 56 segments, including 32 gradient-enabled segments and shimmer; whole sample UI, not component-only CPU time. API37 1080x2400 software SwiftShader GPU, debug APK. No real-device frame-rate guarantee.
